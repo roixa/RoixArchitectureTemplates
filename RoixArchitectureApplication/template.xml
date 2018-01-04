@@ -1,0 +1,56 @@
+<template format="5"
+		revision="1"
+		name="MVPApplication"
+		description="Creates a new MVVM application">
+ 
+	<category value="Roix MVVM application"/>
+ 
+	<parameter
+		id="applicationName"
+		name="Application Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="Common"
+		help="The name of the Application." />
+
+	<parameter
+		id="screenName"
+		name="Screen Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="Main"
+		help="The name of the first screen (activity)." />
+
+	<parameter
+        id="screenPackage"
+        name="Screen Package Name"
+        type="string"
+        suggest="ui.${camelCaseToUnderscore(actionName)}"
+        help="action package name for view, viewmodel, business" />
+
+	<parameter
+		id="repositoryName"
+		name="Repository Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="CommonApi"
+		help="The name of the first repository." />
+
+    <parameter
+        id="provideRepository"
+        name="Provode repository"
+        type="boolean"
+        default="true"
+        help="Provode the first repository into the screen."/>
+
+    <parameter
+        id="useAppCompat"
+        name="Use AppCompat"
+        type="boolean"
+        default="true"
+        help="Use appcompat theme" />
+
+	<globals file="globals.xml.ftl" />
+    <execute file="recipe.xml.ftl" />
+
+</template>
