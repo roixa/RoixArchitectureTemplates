@@ -35,7 +35,7 @@
 		<global id="srcScreenOut" type="string"
 		value="${srcOut}/${slashedPackageName(screenPackage)}"
 	/>
-	<global id="srcActionPackage" type="string"
+	<global id="srcScreenPackage" type="string"
 		value="${packageName}.${screenPackage}"
 	/>
 	<global id="srcCommonPackage" type="string"
@@ -46,6 +46,9 @@
 	/>
 	<global id="srcInteractorPackage" type="string"
 		value="${camelCaseToUnderscore(screenName)}"
+	/>
+	<global id="screenLayoutName" type="string"
+		value="Activity${screenName}" 
 	/>
 
 

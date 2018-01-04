@@ -28,6 +28,14 @@
         suggest="ui.${camelCaseToUnderscore(actionName)}"
         help="action package name for view, viewmodel, business" />
 
+     <parameter
+        id="screenLayoutPath"
+        name="Screen Layout res Path"
+        type="string"
+        constraints="layout|nonempty|unique"
+        suggest="${camelCaseToUnderscore(actionName)}"
+        help="The name path for the layout file" />
+
 	<parameter
 		id="repositoryName"
 		name="Repository Name"
