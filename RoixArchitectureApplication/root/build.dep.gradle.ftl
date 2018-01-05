@@ -1,4 +1,5 @@
 dependencies {
+
     final def supportLibraryVersion = "26.1.0"
     final def daggerVersion = "2.10"
     final def retrofitVersion = "2.3.0"

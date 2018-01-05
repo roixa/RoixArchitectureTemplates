@@ -5,7 +5,6 @@ android {
 
                     "src/main/res/common"
 
-                    , "src/main/res/${actionLayoutPath}"
             ]
         }
     }

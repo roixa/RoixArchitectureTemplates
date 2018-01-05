@@ -25,7 +25,7 @@
         id="screenPackage"
         name="Screen Package Name"
         type="string"
-        suggest="ui.${camelCaseToUnderscore(actionName)}"
+        suggest="ui.${camelCaseToUnderscore(screenName)}"
         help="action package name for view, viewmodel, business" />
 
      <parameter
@@ -33,7 +33,7 @@
         name="Screen Layout res Path"
         type="string"
         constraints="layout|nonempty|unique"
-        suggest="${camelCaseToUnderscore(actionName)}"
+        suggest="${camelCaseToUnderscore(screenName)}"
         help="The name path for the layout file" />
 
 	<parameter
@@ -43,6 +43,12 @@
 		constraints="class|unique|nonempty"
 		default="CommonApi"
 		help="The name of the first repository." />
+	<parameter
+        id="repositoryPackage"
+        name="Repository Package Name"
+        type="string"
+        suggest="ui.${camelCaseToUnderscore(repositoryName)}"
+        help="repository package name for view, viewmodel, business" />
 
     <parameter
         id="provideRepository"
@@ -59,6 +65,8 @@
         help="Use appcompat theme" />
 
 	<globals file="globals.xml.ftl" />
+    <execute file="build_recipe.xml.ftl" />
+
     <execute file="recipe.xml.ftl" />
 
 </template>
