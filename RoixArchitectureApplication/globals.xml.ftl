@@ -51,5 +51,10 @@
 		value="Activity${screenName}" 
 	/>
 
+	<global id="viewType" type="string"
+		value="BaseListActivity"
+	/>
+
+
 
 </globals>
