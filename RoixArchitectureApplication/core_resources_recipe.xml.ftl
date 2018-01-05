@@ -25,4 +25,9 @@
           to="${escapeXmlAttribute(commonResOut)}/values/themes.xml" />
 </recipe>
 
+   	<merge from="root/res/common/values/colors.xml.ftl"
+          to="${escapeXmlAttribute(commonResOut)}/values/colors.xml" />
+</recipe>
+
+
 
