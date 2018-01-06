@@ -1,18 +1,18 @@
-package ${packageName}.ui.main.views
+package ${packageName}.ui.${screenPackage}.views
 
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.Toolbar
-import com.roix.mvvm_archtecture_sample.R
-import com.roix.mvvm_archtecture_sample.data.models.ThreadItem
-import ${packageName}.databinding.ActivityMainBinding
-import ${packageName}.databinding.ItemThreadBinding
+import ${packageName}.R
+import ${packageName}.data.models.${itemName}Item
+import ${packageName}.databinding.Activity${screenName}Binding
+import ${packageName}.databinding.Item${itemName}Binding
 import ${packageName}.ui.common.activities.BaseListActivity
-import ${packageName}.roix.mvvm_.ui.common.view.ToolbarType
-import ${packageName}.ui.main.viewmodels.MainViewModel
+import ${packageName}.ui.common.view.ToolbarType
+import ${packageName}.ui.${screenPackage}.viewmodels.${screenName}ViewModel
 
 
-class MainActivity : BaseListActivity<MainViewModel, ActivityMainBinding,ItemThreadBinding, ThreadItem>() {
+class ${screenName}Activity : BaseListActivity<${screenName}ViewModel, Activity${screenName}Binding,Item${itemName}Binding, ${itemName}Item>() {
 
 
     override fun getRecyclerView(): RecyclerView = binding.rv
@@ -21,9 +21,9 @@ class MainActivity : BaseListActivity<MainViewModel, ActivityMainBinding,ItemThr
 
     override fun getToolbar(): Toolbar? = binding.toolbar.tb
 
-    override fun getLayoutId(): Int = R.layout.activity_main
+    override fun getLayoutId(): Int = R.layout.activity_${screenPackage}
 
-    override fun getItemLayoutId(): Int = R.layout.item_thread
+    override fun getItemLayoutId(): Int = R.layout.item_${itemPackage}
 
 }
 

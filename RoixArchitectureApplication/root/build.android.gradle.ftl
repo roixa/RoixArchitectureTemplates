@@ -33,21 +33,6 @@ android {
         abortOnError false
     }
 
-    applicationVariants.all { final variant ->
-        variant.outputs.each { final output ->
-            final def file = output.outputFile
-            output.outputFile = new File(file.parent, file.name.replace(".apk", "-" + defaultConfig.versionName + "." + defaultConfig.versionCode + ".apk"))
-        }
-        variant.assemble.doLast {
-            variant.outputs.each { final output ->
-                final File unaligned = output.packageApplication.outputFile;
-                final File aligned = output.outputFile
-                if (!unaligned.getName().equalsIgnoreCase(aligned.getName())) {
-                    unaligned.delete()
-                }
-            }
-        }
-    }
 }
 
 apply plugin: 'kotlin-android'

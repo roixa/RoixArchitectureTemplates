@@ -22,19 +22,32 @@
 		help="The name of the first screen (activity)." />
 
 	<parameter
-        id="screenPackage"
-        name="Screen Package Name"
-        type="string"
-        suggest="ui.${camelCaseToUnderscore(screenName)}"
-        help="action package name for view, viewmodel, business" />
+        id="screenType"
+        name="Base Screen View Type"
+        type="enum"
+        default="toolbarActivity" >
+        <option id="toolbarActivity">BaseToolbarActivity</option>
+        <option id="lifecycleActivity">BaseLifecycleActivity</option>
+    </parameter>
 
-     <parameter
-        id="screenLayoutPath"
-        name="Screen Layout res Path"
-        type="string"
-        constraints="layout|nonempty|unique"
-        suggest="${camelCaseToUnderscore(screenName)}"
-        help="The name path for the layout file" />
+	<parameter
+		id="isList"
+		name="List screen"
+		type="boolean"
+		default="false"
+		help="Create a list screen." />
+
+
+	<parameter
+		id="itemName"
+		name="Item  Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="Page"
+		visibility="isList"
+		help="The name of list items." />
+
+
 
 	<parameter
 		id="repositoryName"
@@ -43,32 +56,22 @@
 		constraints="class|unique|nonempty"
 		default="CommonApi"
 		help="The name of the first repository." />
-	<parameter
-        id="repositoryPackage"
-        name="Repository Package Name"
-        type="string"
-        suggest="ui.${camelCaseToUnderscore(repositoryName)}"
-        help="repository package name for view, viewmodel, business" />
 
     <parameter
         id="provideRepository"
-        name="Provode repository"
+        name="Provide repository"
         type="boolean"
         default="true"
-        help="Provode the first repository into the screen."/>
+        help="Provide the first repository into the screen."/>
 
-    <parameter
-        id="useAppCompat"
-        name="Use AppCompat"
-        type="boolean"
-        default="true"
-        help="Use appcompat theme" />
+	<globals file="core_globals.xml.ftl" />
+	<globals file="screen_globals.xml.ftl" />
 
-	<globals file="globals.xml.ftl" />
     <execute file="build_recipe.xml.ftl" />
     <execute file="core_recipe.xml.ftl" />
     <execute file="core_resources_recipe.xml.ftl" />
     <execute file="core_ui_recipe.xml.ftl" />
     <execute file="dagger_recipe.xml.ftl" />
+    <execute file="screen_recipe.xml.ftl" />
 
 </template>

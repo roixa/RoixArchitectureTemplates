@@ -6,7 +6,7 @@
         android:name="${srcApp}.${appName}"
         android:allowBackup="true"
         android:supportsRtl="true">
-        <activity android:name="${srcScreenPackage}.view.${screenName}Activity" />
+        <activity android:name="ui.${screenPackage}.views.${screenName}Activity" />
 
 
     </application>

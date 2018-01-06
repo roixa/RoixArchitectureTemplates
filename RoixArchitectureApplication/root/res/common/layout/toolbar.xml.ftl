@@ -7,7 +7,7 @@
 
         <variable
             name="toolbarType"
-            type="com.roix.mvvm_archtecture_sample.ui.common.view.ToolbarType" />
+            type="${packageName}.ui.common.view.ToolbarType" />
     </data>
 
     <android.support.v7.widget.Toolbar

@@ -1,5 +1,8 @@
 dependencies {
+
+
     //arcitecture components
+
     implementation "android.arch.lifecycle:common-java8:1.0.0"
     implementation "android.arch.lifecycle:extensions:1.0.0"
     implementation "android.arch.lifecycle:reactivestreams:1.0.0"
@@ -35,5 +38,7 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:3.8.1"
     implementation "com.squareup.okhttp3:logging-interceptor:3.8.1"
     implementation "com.squareup.retrofit2:adapter-rxjava2:2.3.0"
+
 }
+
 
