@@ -1,6 +1,8 @@
 package ${packageName}.dagger.common
 
 import ${packageName}.dagger.${screenPackage}.${screenName}Module
+import ${packageName}.dagger.${repositoryPackage}.${repositoryName}RepositoryModule
+
 import dagger.Module
 
 /**
@@ -8,7 +10,10 @@ import dagger.Module
  */
 @ViewModelScope
 @Module(includes = arrayOf(
-        ${screenName}Module::class
+   UtilsModule::class
+   ,${screenName}Module::class
+   ,${repositoryName}RepositoryModule::class
+
 ))
-class ScreensModule
+class ArchitectureModule
 

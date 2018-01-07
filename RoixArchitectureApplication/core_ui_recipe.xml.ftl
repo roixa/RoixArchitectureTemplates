@@ -49,5 +49,7 @@
 	<instantiate from="root/src/app_package/common/viewmodels/BaseViewModel.kt.ftl"
                    to="${escapeXmlAttribute(srcCommonOut)}/viewmodels/BaseViewModel.kt" />
 
+	<instantiate from="root/src/app_package/buissness/common/IBaseListInteractor.kt.ftl"
+                   to="${escapeXmlAttribute(srcOut)}/buissness/common/IBaseListInteractor.kt" />
 
 </recipe>

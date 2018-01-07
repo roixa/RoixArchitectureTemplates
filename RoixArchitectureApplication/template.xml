@@ -1,9 +1,9 @@
 <template format="5"
 		revision="1"
-		name="MVPApplication"
+		name="MVVMArchitecture"
 		description="Creates a new MVVM application">
  
-	<category value="Roix MVVM application"/>
+	<category value="Roix MVVM Architecture"/>
  
 	<parameter
 		id="applicationName"
@@ -20,15 +20,6 @@
 		constraints="class|unique|nonempty"
 		default="Main"
 		help="The name of the first screen (activity)." />
-
-	<parameter
-        id="screenType"
-        name="Base Screen View Type"
-        type="enum"
-        default="toolbarActivity" >
-        <option id="toolbarActivity">BaseToolbarActivity</option>
-        <option id="lifecycleActivity">BaseLifecycleActivity</option>
-    </parameter>
 
 	<parameter
 		id="isList"
@@ -73,5 +64,6 @@
     <execute file="core_ui_recipe.xml.ftl" />
     <execute file="dagger_recipe.xml.ftl" />
     <execute file="screen_recipe.xml.ftl" />
+    <execute file="dependency_recipe.xml.ftl" />
 
 </template>

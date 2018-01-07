@@ -8,9 +8,9 @@ import android.support.v7.widget.Toolbar
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.LinearLayout
-import com.roix.mvvm_archtecture_sample.BR
-import com.roix.mvvm_archtecture_sample.R
-import ${packageName}.MenuItemBinding
+import ${packageName}.BR
+import ${packageName}.R
+import ${packageName}.databinding.MenuItemBinding
 import ${packageName}.ui.common.view.ToolbarType
 import ${packageName}.ui.common.viewmodels.BaseDatabindingViewModel
 import kotlinx.android.synthetic.main.toolbar.view.*

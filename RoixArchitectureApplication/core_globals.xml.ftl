@@ -28,6 +28,11 @@
 		value="${srcOut}/utils"
 	/>
 
+	<global id="srcInteractorOut" type="string"
+		value="${srcOut}/buissness/common"
+	/>
+
+
 	<global id="commonResOut" type="string"
 		value="${resOut}/common"
 	/>

@@ -23,8 +23,13 @@
 		value="${srcOut}/dagger/${camelCaseToUnderscore(screenName)}"
 	/>
 
+	<global id="srcDaggerRepositoryOut" type="string"
+		value="${srcOut}/dagger/${camelCaseToUnderscore(repositoryName)}"
+	/>
+
+
 	<global id="srcInteractorPackageOut" type="string"
-		value="${srcOut}/business/${camelCaseToUnderscore(screenName)}"
+		value="${srcOut}/buissness/${camelCaseToUnderscore(screenName)}"
 	/>
 
 	<global id="srcRepositoryPackageOut" type="string"
@@ -36,7 +41,7 @@
 	/>
 
 	<global id="srcScreenResLayoutOut" type="string"
-		value="${resDir}/${camelCaseToUnderscore(screenName)}/layout"
+		value="${resOut}/${camelCaseToUnderscore(screenName)}/layout"
 	/>
 
 

@@ -1,4 +1,4 @@
-package ${packageName}.dagger.common
+package ${packageName}.dagger.${repositoryPackage}
 
 import ${packageName}.data.repositories.${repositoryPackage}.I${repositoryName}Repository
 import ${packageName}.data.repositories.${repositoryPackage}.${repositoryName}Repository
@@ -11,7 +11,7 @@ import javax.inject.Singleton
  */
 @Module
 @Singleton
-class RepositoriesModule {
+class ${repositoryName}RepositoryModule {
 
     @Provides fun provide${repositoryName}Repository(): I${repositoryName}Repository = ${repositoryName}Repository()
 

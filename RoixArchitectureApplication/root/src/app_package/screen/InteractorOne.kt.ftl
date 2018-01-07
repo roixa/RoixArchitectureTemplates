@@ -13,7 +13,7 @@ class ${screenName}Interactor: I${screenName}Interactor {
     private val ${repositoryPackage}Repository: I${repositoryName}Repository
 
     @Inject constructor(${repositoryPackage}Repository: I${repositoryName}Repository) {
-        this.${repositoryPackage}Repository = ${repositoryName}Repository
+        this.${repositoryPackage}Repository = ${repositoryName}Repository()
     }
 
 }

@@ -10,11 +10,11 @@
     <open file="${escapeXmlAttribute(projectOut)}/../build.gradle" />	
 
     <merge from="root/build.android.gradle.ftl"
-             
+			to="${escapeXmlAttribute(projectOut)}/build.gradle" />
 
-to="${escapeXmlAttribute(projectOut)}/build.gradle" />
     <merge from="root/build.dep.gradle.ftl"
-             to="${escapeXmlAttribute(projectOut)}/build.gradle" />
+			to="${escapeXmlAttribute(projectOut)}/build.gradle" />
+
 	<open file="${escapeXmlAttribute(projectOut)}/build.gradle" />	
 
 	<instantiate from="root/resources.gradle.ftl"
