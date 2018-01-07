@@ -6,8 +6,9 @@ import ${packageName}.dagger.${repositoryPackage}.${repositoryName}RepositoryMod
 import dagger.Module
 
 /**
- * Created by roix on 28.11.2017.
- */
+ *fixme: add the generated module after generate screen or repository
+ * */
+
 @ViewModelScope
 @Module(includes = arrayOf(
    UtilsModule::class

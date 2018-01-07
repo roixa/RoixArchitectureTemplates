@@ -1,0 +1,56 @@
+<template format="5"
+		revision="1"
+		name="Screen"
+		description="Creates a new MVVM Screen">
+ 
+	<category value="Roix MVVM Architecture"/>
+ 
+
+	<parameter
+		id="screenName"
+		name="Screen Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="Main"
+		help="The name of the first screen (activity)." />
+
+	<parameter
+		id="isList"
+		name="List screen"
+		type="boolean"
+		default="false"
+		help="Create a list screen." />
+
+
+	<parameter
+		id="itemName"
+		name="Item  Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="Page"
+		visibility="isList"
+		help="The name of list items." />
+
+    <parameter
+        id="provideRepository"
+        name="Provide repository"
+        type="boolean"
+        default="false"
+        help="Provide the existing repository into the screen."/>
+
+
+	<parameter
+		id="repositoryName"
+		name="Repository Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="CommonApi"
+		visibility="provideRepository"
+		help="The name of the existing providing repository." />
+
+
+	<globals file="globals.xml.ftl" />
+
+    <execute file="recipe.xml.ftl" />
+
+</template>

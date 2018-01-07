@@ -1,0 +1,22 @@
+<template format="5"
+		revision="1"
+		name="Repository"
+		description="Creates a new MVVM Repository">
+ 
+	<category value="Roix MVVM Architecture"/>
+ 
+
+	<parameter
+		id="repositoryName"
+		name="Repository Name"
+		type="string"
+		constraints="class|unique|nonempty"
+		default="CommonApi"
+		help="The name of the existing providing repository." />
+
+
+	<globals file="globals.xml.ftl" />
+
+    <execute file="recipe.xml.ftl" />
+
+</template>
