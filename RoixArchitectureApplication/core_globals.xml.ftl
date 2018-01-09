@@ -15,9 +15,10 @@
 	<global id="srcAppOut" type="string"
 		value="${srcOut}/application"
 	/>
-	<global id="srcDaggerOut" type="string"
-		value="${srcOut}/dagger"
+	<global id="srcToothpickOut" type="string"
+		value="${srcOut}/toothpick"
 	/>
+	
 	<global id="srcDataOut" type="string"
 		value="${srcOut}/data"
 	/>
@@ -34,7 +35,7 @@
 
 
 	<global id="commonResOut" type="string"
-		value="${resOut}/common"
+		value="${resOut}"
 	/>
 
 		<global id="srcCommonPackage" type="string"

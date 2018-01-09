@@ -11,6 +11,7 @@ import android.support.annotation.IdRes
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import ${packageName}.R
+import ${packageName}.application.CommonApplication
 import ${packageName}.ui.common.viewmodels.BaseLifecycleViewModel
 import io.reactivex.Observable
 import io.reactivex.Single
@@ -47,7 +48,7 @@ abstract class BaseLifecycleActivity<ViewModel : BaseLifecycleViewModel> : AppCo
 
         viewModel.loadingLiveData.sub { b -> handleProgress(b) }
         viewModel.showMessageDialogLiveData.sub { s -> this.showMessageDialog(s) }
-        viewModel.onBindView()
+        viewModel.onBindView(application as CommonApplication)
 
     }
 

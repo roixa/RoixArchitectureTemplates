@@ -19,8 +19,8 @@
 	<global id="srcScreenOut" type="string"
 		value="${srcOut}/ui/${camelCaseToUnderscore(screenName)}"
 	/>
-	<global id="srcDaggerScreenOut" type="string"
-		value="${srcOut}/dagger/${camelCaseToUnderscore(screenName)}"
+	<global id="srcToothpickScreenOut" type="string"
+		value="${srcOut}/toothpick/${camelCaseToUnderscore(screenName)}"
 	/>
 
 	<global id="srcDaggerRepositoryOut" type="string"
@@ -33,7 +33,7 @@
 	/>
 
 	<global id="srcRepositoryPackageOut" type="string"
-		value="${srcOut}/repositories/${camelCaseToUnderscore(repositoryName)}"
+		value="${srcOut}/data/repositories/${camelCaseToUnderscore(repositoryName)}"
 	/>
 
 	<global id="srcItemPackageOut" type="string"
@@ -41,7 +41,7 @@
 	/>
 
 	<global id="srcScreenResLayoutOut" type="string"
-		value="${resOut}/${camelCaseToUnderscore(screenName)}/layout"
+		value="${resOut}/layout"
 	/>
 
 

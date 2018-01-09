@@ -11,11 +11,9 @@ import io.reactivex.Single
  */
 class ${screenName}Interactor: I${screenName}Interactor {
 
-    private val ${repositoryPackage}Repository: I${repositoryName}Repository
+    @Inject constructor()
 
-    @Inject constructor(${repositoryPackage}Repository: I${repositoryName}Repository) {
-        this.${repositoryPackage}Repository = ${repositoryName}Repository()
-    }
+    @Inject lateinit var  ${repositoryPackage}Repository: ${repositoryName}Repository
 
     override fun loadItems(page: Int): Single<List<${itemName}Item>> = Single.never()
 

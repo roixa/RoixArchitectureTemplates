@@ -21,27 +21,18 @@
 		value="${camelCaseToUnderscore(repositoryName)}"
 	/>
 
-
-
 	
 	<global id="srcScreenOut" type="string"
 		value="${srcOut}/ui/${camelCaseToUnderscore(screenName)}"
 	/>
-	<global id="srcDaggerScreenOut" type="string"
-		value="${srcOut}/dagger/${camelCaseToUnderscore(screenName)}"
-	/>
-
-	<global id="srcDaggerRepositoryOut" type="string"
-		value="${srcOut}/dagger/${camelCaseToUnderscore(repositoryName)}"
+	
+	<global id="srcToothpickScreenOut" type="string"
+		value="${srcOut}/toothpick/${camelCaseToUnderscore(screenName)}"
 	/>
 
 
 	<global id="srcInteractorPackageOut" type="string"
 		value="${srcOut}/buissness/${camelCaseToUnderscore(screenName)}"
-	/>
-
-	<global id="srcRepositoryPackageOut" type="string"
-		value="${srcOut}/repositories/${camelCaseToUnderscore(repositoryName)}"
 	/>
 
 	<global id="srcItemPackageOut" type="string"

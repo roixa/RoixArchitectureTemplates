@@ -62,7 +62,7 @@
     <execute file="core_recipe.xml.ftl" />
     <execute file="core_resources_recipe.xml.ftl" />
     <execute file="core_ui_recipe.xml.ftl" />
-    <execute file="dagger_recipe.xml.ftl" />
+    <execute file="toothpick_recipe.xml.ftl" />
     <execute file="screen_recipe.xml.ftl" />
     <execute file="dependency_recipe.xml.ftl" />
 

@@ -23,15 +23,11 @@
      	           to="${escapeXmlAttribute(srcInteractorPackageOut)}/I${screenName}Interactor.kt" />
 
 		<#if provideRepository>
-				<instantiate from="root/src/app_package/screen/ModuleOne.kt.ftl"
-     	           	to="${escapeXmlAttribute(srcDaggerScreenOut)}/${screenName}Module.kt" />
 
 				<instantiate from="root/src/app_package/screen/ListInteractorOne.kt.ftl"
      	           	to="${escapeXmlAttribute(srcInteractorPackageOut)}/${screenName}Interactor.kt" />
 
 			<#else>
-				<instantiate from="root/src/app_package/screen/ModuleZero.kt.ftl"
-     	           	to="${escapeXmlAttribute(srcDaggerScreenOut)}/${screenName}Module.kt" />
 
 				<instantiate from="root/src/app_package/screen/ListInteractorZero.kt.ftl"
      	           	to="${escapeXmlAttribute(srcInteractorPackageOut)}/${screenName}Interactor.kt" />
@@ -56,15 +52,11 @@
 
 
 		<#if provideRepository>
-				<instantiate from="root/src/app_package/screen/ModuleOne.kt.ftl"
-     	           	to="${escapeXmlAttribute(srcDaggerScreenOut)}/${screenName}Module.kt" />
 
 				<instantiate from="root/src/app_package/screen/InteractorOne.kt.ftl"
      	           	to="${escapeXmlAttribute(srcInteractorPackageOut)}/${screenName}Interactor.kt" />
 
 			<#else>
-				<instantiate from="root/src/app_package/screen/ModuleZero.kt.ftl"
-     	           	to="${escapeXmlAttribute(srcDaggerScreenOut)}/${screenName}Module.kt" />
 
 				<instantiate from="root/src/app_package/screen/InteractorZero.kt.ftl"
      	           	to="${escapeXmlAttribute(srcInteractorPackageOut)}/${screenName}Interactor.kt" />
@@ -74,14 +66,14 @@
 
 	</#if>
 
+	<instantiate from="root/src/app_package/screen/Module.kt.ftl"
+     	 to="${escapeXmlAttribute(srcToothpickScreenOut)}/${screenName}Module.kt" />
+
 	<instantiate from="root/src/app_package/screen/IRepository.kt.ftl"
      	 to="${escapeXmlAttribute(srcRepositoryPackageOut)}/I${repositoryName}Repository.kt" />
 
 	<instantiate from="root/src/app_package/screen/Repository.kt.ftl"
      	 to="${escapeXmlAttribute(srcRepositoryPackageOut)}/${repositoryName}Repository.kt" />
-
-	<instantiate from="root/src/app_package/screen/RepositoryModule.kt.ftl"
-     	 to="${escapeXmlAttribute(srcDaggerRepositoryOut)}/${repositoryName}RepositoryModule.kt" />
 
 
 </recipe>

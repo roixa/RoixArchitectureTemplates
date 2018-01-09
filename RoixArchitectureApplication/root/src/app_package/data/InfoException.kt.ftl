@@ -1,4 +1,4 @@
-package ${packageName}.data
+package ${packageName}.data.common
 
 /**
  * Created by belyalov on 26.12.2017.

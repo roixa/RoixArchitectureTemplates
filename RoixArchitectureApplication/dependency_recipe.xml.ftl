@@ -5,8 +5,6 @@
     <dependency mavenUrl="android.arch.lifecycle:extensions:1.0.0"/>
     <dependency mavenUrl="android.arch.lifecycle:reactivestreams:1.0.0"/>
 
-    <dependency mavenUrl="com.google.dagger:dagger:2.10"/>
-
     <dependency mavenUrl="io.reactivex.rxjava2:rxjava:2.1.1"/>
     <dependency mavenUrl="io.reactivex.rxjava2:rxandroid:2.0.1"/>
 
@@ -31,5 +29,7 @@
     <dependency mavenUrl="com.squareup.okhttp3:logging-interceptor:3.8.1"/>
     <dependency mavenUrl="com.squareup.retrofit2:adapter-rxjava2:2.3.0"/>
 
+    <dependency mavenUrl="com.github.stephanenicolas.toothpick:toothpick-runtime:1.0.8"/>
+    <dependency mavenUrl="com.github.stephanenicolas.toothpick:smoothie:1.0.8"/>
 
 </recipe>

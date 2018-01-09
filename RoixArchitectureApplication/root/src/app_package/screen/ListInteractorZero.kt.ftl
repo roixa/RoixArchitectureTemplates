@@ -8,9 +8,9 @@ import io.reactivex.Single
  */
 class ${screenName}Interactor: I${screenName}Interactor {
 
-    override fun loadItems(page: Int): Single<List<${itemName}Item>> {
-//todo not yet implimented
-}
+    @Inject constructor()
+
+    override fun loadItems(page: Int): Single<List<${itemName}Item>> = Single.never()
 
 
 }

@@ -10,10 +10,8 @@ import javax.inject.Inject
  */
 class ${screenName}Interactor: I${screenName}Interactor {
 
-    private val ${repositoryPackage}Repository: I${repositoryName}Repository
+    @Inject constructor()
 
-    @Inject constructor(${repositoryPackage}Repository: I${repositoryName}Repository) {
-        this.${repositoryPackage}Repository = ${repositoryName}Repository()
-    }
+    @Inject lateinit var  ${repositoryPackage}Repository: ${repositoryName}Repository
 
 }
