@@ -12,6 +12,10 @@ import ${packageName}.ui.common.view.ToolbarType
 import ${packageName}.ui.${screenPackage}.viewmodels.${screenName}ViewModel
 
 
+/**
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
+ */
 class ${screenName}Activity : BaseListActivity<${screenName}ViewModel, Activity${screenName}Binding,Item${itemName}Binding, ${itemName}Item>() {
 
 

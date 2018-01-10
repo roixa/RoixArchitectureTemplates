@@ -16,7 +16,8 @@ import ${packageName}.ui.common.viewmodels.BaseDatabindingViewModel
 import kotlinx.android.synthetic.main.toolbar.view.*
 
 /**
- * Created by roix on 05.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 abstract class BaseToolbarActivity<ViewModel : BaseDatabindingViewModel, DataBinding : ViewDataBinding> : BaseDatabindingActivity<ViewModel, DataBinding>() {
 

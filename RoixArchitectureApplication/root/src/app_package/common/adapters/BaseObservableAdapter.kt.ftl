@@ -5,6 +5,10 @@ import android.databinding.ViewDataBinding
 import android.support.annotation.LayoutRes
 import ${packageName}.BR
 
+/**
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
+ */
 class BaseObservableAdapter<Item, DataBinding : ViewDataBinding>(items: ObservableList<Item>, val layoutId: Int)
     : BaseMultyTypeObservableAdapter<Item, DataBinding>(items) {
 

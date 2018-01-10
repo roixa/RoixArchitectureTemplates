@@ -8,7 +8,8 @@ import ${packageName}.ui.common.adapters.BaseObservableAdapter
 import ${packageName}.ui.common.viewmodels.BaseListViewModel
 
 /**
- * Created by roix on 27.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 abstract class BaseListActivity<ViewModel : BaseListViewModel<Item>, DataBinding : ViewDataBinding, ItemDataBinding : ViewDataBinding, Item>
     : BaseToolbarActivity<ViewModel, DataBinding>() {

@@ -6,9 +6,9 @@ import android.support.v7.widget.RecyclerView
 import java.lang.ref.WeakReference
 
 /**
- * Created by roix on 27.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
-
 abstract class BaseMultyTypeObservableAdapter<Item, DataBinding : ViewDataBinding>(protected val mItems: ObservableList<Item>)
     : BaseDataBindingAdapter<DataBinding>(), DataChangedListener {
 

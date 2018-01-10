@@ -1,8 +1,10 @@
 package ${packageName}.ui.common.loading
 
 /**
- * Created by roix on 03.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
+
 interface ILoadingObserver {
     fun onStartLoad()
     fun onEndLoad()

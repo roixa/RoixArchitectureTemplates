@@ -5,7 +5,8 @@ import ${packageName}.buissness.${screenPackage}.${screenName}Interactor
 import toothpick.config.Module
 
 /**
- * Created by roix on 08.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 class ${screenName}Module : Module() {
     init {

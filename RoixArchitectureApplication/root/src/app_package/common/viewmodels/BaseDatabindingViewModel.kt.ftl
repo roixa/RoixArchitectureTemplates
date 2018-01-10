@@ -6,7 +6,8 @@ import io.reactivex.Observable
 import io.reactivex.Single
 
 /**
- * Created by roix on 03.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 abstract class BaseDatabindingViewModel: BaseLifecycleViewModel() {
 

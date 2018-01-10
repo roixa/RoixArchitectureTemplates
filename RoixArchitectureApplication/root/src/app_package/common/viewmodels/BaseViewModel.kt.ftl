@@ -16,7 +16,8 @@ import toothpick.config.Module
 import javax.inject.Inject
 
 /**
- * Created by belyalov on 01.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 abstract class BaseViewModel : ViewModel() {
 

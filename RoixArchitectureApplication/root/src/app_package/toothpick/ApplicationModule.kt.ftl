@@ -7,7 +7,8 @@ import ${packageName}.utils.rx.general.RxSchedulersAbs
 import toothpick.config.Module
 
 /**
- * Created by roix on 08.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 class ApplicationModule(val application: CommonApplication):Module() {
     init {

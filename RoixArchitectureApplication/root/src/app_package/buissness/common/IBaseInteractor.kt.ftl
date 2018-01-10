@@ -1,5 +1,9 @@
 package ${packageName}.buissness.common
 
-import io.reactivex.Single
+
+/**
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
+ */
 
 interface IBaseInteractor

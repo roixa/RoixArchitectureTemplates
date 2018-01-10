@@ -4,7 +4,8 @@ import javax.inject.Inject
 
 
 /**
- * Created by roix on 30.11.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
  @ApplicationScope
 class ${repositoryName}Repository : I${repositoryName}Repository {

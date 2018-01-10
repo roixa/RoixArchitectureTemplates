@@ -15,7 +15,8 @@ import toothpick.registries.MemberInjectorRegistryLocator
 import toothpick.smoothie.module.SmoothieApplicationModule
 
 /**
- * Created by roix on 29.11.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 class CommonApplication : Application() {
 

@@ -3,9 +3,9 @@ package ${packageName}.ui.common.loading
 import android.arch.lifecycle.LiveData
 
 /**
- * Created by belyalov on 19.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
-
 class LoadingLiveData : LiveData<Boolean>(), ILoadingObserver {
 
     @Volatile private var loadingCount = 0

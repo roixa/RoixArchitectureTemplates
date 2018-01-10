@@ -7,7 +7,8 @@ import android.support.v4.content.ContextCompat
 import ${packageName}.R
 
 /**
- * Created by roix on 05.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 data class ToolbarType(val visible: Boolean,
                        @DrawableRes val icon: Int,

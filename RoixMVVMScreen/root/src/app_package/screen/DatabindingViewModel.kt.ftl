@@ -12,7 +12,7 @@ import toothpick.config.Module
 class ${screenName}ViewModel :BaseDatabindingViewModel() {
 
     @Inject
-    protected lateinit var ${screenPackage}Interactor :I${screenName}Interactor
+    protected lateinit var interactor :I${screenName}Interactor
 
     override fun getModule(): Module = ${screenName}Module()
 }

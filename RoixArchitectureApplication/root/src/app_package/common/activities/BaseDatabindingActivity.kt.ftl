@@ -7,7 +7,8 @@ import com.android.databinding.library.baseAdapters.BR
 import ${packageName}.ui.common.viewmodels.BaseDatabindingViewModel
 
 /**
- * Created by roix on 02.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 abstract class BaseDatabindingActivity<ViewModel : BaseDatabindingViewModel, DataBinding : ViewDataBinding> : BaseLifecycleActivity<ViewModel>() {
 

@@ -7,7 +7,8 @@ import ${packageName}.data.models.${itemName}Item
 import io.reactivex.Single
 
 /**
- * Created by roix on 06.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 class ${screenName}Interactor: I${screenName}Interactor {
 

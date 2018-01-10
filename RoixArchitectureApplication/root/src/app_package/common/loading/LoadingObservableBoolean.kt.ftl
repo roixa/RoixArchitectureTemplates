@@ -3,7 +3,8 @@ package ${packageName}.ui.common.loading
 import android.databinding.ObservableBoolean
 
 /**
- * Created by roix on 03.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 
 class LoadingObservableBoolean : ObservableBoolean(), ILoadingObserver {

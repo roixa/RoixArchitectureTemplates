@@ -1,6 +1,7 @@
 package ${packageName}.data.common
 
 /**
- * Created by belyalov on 26.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 data class InfoException(val info: String) : Throwable()

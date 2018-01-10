@@ -9,11 +9,12 @@ import javax.inject.Inject
 import toothpick.config.Module
 
 /**
- * Created by roix on 30.11.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 class ${screenName}ViewModel : BaseListViewModel<${itemName}Item>() {
 
-    @Inject lateinit var ${screenPackage}Interactor: ${screenName}Interactor
+    @Inject lateinit var interactor: ${screenName}Interactor
 
     override fun getInteractor(): IBaseListInteractor<${itemName}Item> = ${screenPackage}Interactor
 

@@ -1,6 +1,8 @@
 package ${packageName}.buissness.${screenPackage}
 
 /**
- * Created by roix on 06.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
+
 interface I${screenName}Interactor

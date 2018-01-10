@@ -3,7 +3,8 @@ package ${packageName}.toothpick.common
 import java.lang.annotation.Documented
 
 /**
- * Created by roix on 08.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 @javax.inject.Scope
 @Documented

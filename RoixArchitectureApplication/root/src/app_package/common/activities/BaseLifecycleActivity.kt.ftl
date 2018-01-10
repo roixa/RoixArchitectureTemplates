@@ -18,7 +18,8 @@ import io.reactivex.Single
 import java.lang.reflect.ParameterizedType
 
 /**
- * Created by belyalov on 01.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 abstract class BaseLifecycleActivity<ViewModel : BaseLifecycleViewModel> : AppCompatActivity() {
 
