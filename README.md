@@ -34,7 +34,7 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 ```
 
-![Image of Yaktocat](https://drive.google.com/file/d/1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV/view?usp=sharing)
+![Image of Yaktocat](https://drive.google.com/uc?export=download&id=1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV)
 
 ### Tools / Libs Utilized
 - Jetbrains Kotlin : https://kotlinlang.org/
