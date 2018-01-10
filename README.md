@@ -10,12 +10,12 @@ After every template use, generated code is able to compile. This allows to work
 1. Architecture: 
 Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
 
-2. Repository: 
-Add repository class-interface pair.
-
-3. Screen: 
+2. Screen: 
 Add view (activity or fragment), vievmodel, interactor.And resolving in a DI tree.  
-There is able to provide repository inside the template. Screen can be base list toolbar etc.
+There is able to provide repository inside the template. Screen can be list, toolbar, base etc.
+
+3. Repository: 
+Add repository class-interface pair.
 
 ```
 
@@ -28,7 +28,7 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 3. Restart Android Studio
 
-3. Choose File -> New -> Roix MVVM Architecture -> choosed template
+3. Choose File->New->Roix MVVM Architecture->template
 
 4. Use the template
 
@@ -44,4 +44,4 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 - Retrofit 2 : http://square.github.io/retrofit/
 - Picasso : http://square.github.io/picasso/
 - Permission dispatcher : https://github.com/permissions-dispatcher/PermissionsDispatcher
-- Constraint Laoyut,Support Library etc
+- Constraint Laoyut, Support Library etc
