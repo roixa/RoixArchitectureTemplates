@@ -7,11 +7,15 @@ After every template use, generated code is able to compile. This allows to work
 
 ### Templates
 ```
-1. Architecture. Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
+1. Architecture: 
+Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
 
-2. Repository: Add repository class-interface pair.
+2. Repository: 
+Add repository class-interface pair.
 
-3. Screen: Add view (activity or fragment), vievmodel, interactor. And resolving in a DI tree.  There is able to provide repository inside the template. Screen can be base list toolbar etc.
+3. Screen: 
+Add view (activity or fragment), vievmodel, interactor.And resolving in a DI tree.  
+There is able to provide repository inside the template. Screen can be base list toolbar etc.
 
 ```
 
@@ -19,7 +23,8 @@ After every template use, generated code is able to compile. This allows to work
 ```
 1. Download or clone this repository 
 
-2. Copy (RoixArchitectureApplication , RoixMVVMRepository , RoixMVVMScreen) in folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
+2. Copy (RoixArchitectureApplication , RoixMVVMRepository , RoixMVVMScreen) 
+in folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 3. Restart Android Studio
 
