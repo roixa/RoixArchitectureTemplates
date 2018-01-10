@@ -15,7 +15,7 @@ Add view (activity or fragment), vievmodel, interactor. And resolving in a DI tr
 There is able to provide repository in interactor inside the template. Screen can be list, toolbar, base etc.
 
 3. Repository: 
-Add repository class-interface pair.
+Add repository class-interface pair with resolved DI.
 
 ```
 
