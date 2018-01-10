@@ -1,6 +1,6 @@
 # RoixArchitectureTemplates
 
-### Large architecture template for android
+### Large architecture templates for android
 
 This is a clean mvvm architecture with DI, included base list and toolbar screens logic, configured themes, styles and values etc. 
 After every template use, generated code is able to compile. This allows to work with architecture and DI, as a black boxes.
@@ -23,12 +23,12 @@ There is able to provide repository inside the template. Screen can be base list
 ```
 1. Download or clone this repository 
 
-2. Copy (RoixArchitectureApplication , RoixMVVMRepository , RoixMVVMScreen) 
-in folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
+2. Copy (RoixArchitectureApplication , RoixMVVMRepository , RoixMVVMScreen) folders
+to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 3. Restart Android Studio
 
-3. Choose File->New->Roix MVVM Architecture-> choosed template
+3. Choose File -> New -> Roix MVVM Architecture -> choosed template
 
 4. Use the template
 
