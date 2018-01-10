@@ -11,8 +11,8 @@ After every template use, generated code is able to compile. This allows to work
 Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
 
 2. Screen: 
-Add view (activity or fragment), vievmodel, interactor.And resolving in a DI tree.  
-There is able to provide repository inside the template. Screen can be list, toolbar, base etc.
+Add view (activity or fragment), vievmodel, interactor. And resolving in a DI tree.  
+There is able to provide repository in interactor inside the template. Screen can be list, toolbar, base etc.
 
 3. Repository: 
 Add repository class-interface pair.
