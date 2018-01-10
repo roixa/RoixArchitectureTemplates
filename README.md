@@ -3,7 +3,7 @@
 ### Large architecture templates for android
 
 This is a clean mvvm architecture with DI, included base list and toolbar screens logic, configured themes, styles and values etc. 
-After every template use, generated code is able to compile. This allows to work with architecture and DI, as a black boxes.
+After every template use,the project is able to compile. This allows to work with architecture and DI, as a black boxes.
 
 ### Templates
 ```
@@ -47,8 +47,12 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 - Permission dispatcher : https://github.com/permissions-dispatcher/PermissionsDispatcher
 - Constraint Laoyut, Support Library etc
 
+### Basic architecture scheme
 ![templates](https://drive.google.com/uc?export=download&id=1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV)
 
+### Inherence structure
 ![base classes](https://drive.google.com/uc?export=download&id=1_0vD6KmbgCa9d1BESCbpZZeaKLkLQ3sp)
 
+### StateList enum graph
+![slate_list](https://drive.google.com/uc?export=download&id=1692blYaVibwyYC-zA8j3IFx-7END81jQ)
 
