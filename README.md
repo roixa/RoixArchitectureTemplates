@@ -34,7 +34,6 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 ```
 
-![Image of Yaktocat](https://drive.google.com/uc?export=download&id=1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV)
 
 ### Tools / Libs Utilized
 - Jetbrains Kotlin : https://kotlinlang.org/
@@ -47,3 +46,9 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 - Picasso : http://square.github.io/picasso/
 - Permission dispatcher : https://github.com/permissions-dispatcher/PermissionsDispatcher
 - Constraint Laoyut, Support Library etc
+
+![templates](https://drive.google.com/uc?export=download&id=1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV)
+
+![base classes](https://drive.google.com/uc?export=download&id=1_0vD6KmbgCa9d1BESCbpZZeaKLkLQ3sp)
+
+
