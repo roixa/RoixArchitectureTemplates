@@ -22,6 +22,8 @@
 	<instantiate from="root/src/app_package/utils/rx/RxSchedulersTest.kt.ftl"
                    to="${escapeXmlAttribute(srcUtilsOut)}/rx/general/RxSchedulersTest.kt" />
 
+	<instantiate from="root/src/app_package/utils/ui/ItemClickSupport.kt.ftl"
+                   to="${escapeXmlAttribute(srcUtilsOut)}/ui/ItemClickSupport.kt" />
 
 
 

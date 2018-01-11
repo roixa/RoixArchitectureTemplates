@@ -31,6 +31,10 @@
 
    	<merge from="root/res/common/values/colors.xml.ftl"
           to="${escapeXmlAttribute(commonResOut)}/values/colors.xml" />
+		  
+	<merge from="root/res/common/values/ids.xml.ftl"
+          to="${escapeXmlAttribute(commonResOut)}/values/ids.xml" />
+
 </recipe>
 
 
