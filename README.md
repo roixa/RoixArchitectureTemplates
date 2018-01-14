@@ -5,6 +5,13 @@
 This is a clean mvvm architecture with DI, included base list and toolbar screens logic, configured themes, styles and values etc. 
 After every template use,the project is able to compile. This allows to work with architecture and DI, as a black boxes.
 
+### Main advantages
+```
+1. It is framework!
+
+2 in progress
+```
+
 ### Templates
 ```
 1. Architecture: 
