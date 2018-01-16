@@ -53,12 +53,11 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 ### Basic architecture scheme
 
-![image](architecture.png)
+![Screenshot](architecture.png)
 
-![image2](https://drive.google.com/uc?export=download&id=1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV)
 
 ### Inherence structure
-![base classes](inheritance.png)
+![Screenshot](inheritance.png)
 
 ### StateList enum graph
 ![slate_list](https://drive.google.com/uc?export=download&id=1692blYaVibwyYC-zA8j3IFx-7END81jQ)
