@@ -52,10 +52,13 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 - Constraint Laoyut, Support Library etc
 
 ### Basic architecture scheme
-![templates](https://drive.google.com/uc?export=download&id=1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV)
+
+![image](architecture.png)
+
+![image2](https://drive.google.com/uc?export=download&id=1TmeTWi9mBKpGo7G9qQqNziHtkUIqeofV)
 
 ### Inherence structure
-![base classes](https://drive.google.com/uc?export=download&id=1_0vD6KmbgCa9d1BESCbpZZeaKLkLQ3sp)
+![base classes](inheritance.png)
 
 ### StateList enum graph
 ![slate_list](https://drive.google.com/uc?export=download&id=1692blYaVibwyYC-zA8j3IFx-7END81jQ)
