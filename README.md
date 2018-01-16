@@ -1,13 +1,13 @@
 # RoixArchitectureTemplates
 
-### Large architecture templates for android
+### Global architecture templates for android
 
-This is a clean mvvm architecture with DI, included base list and toolbar screens logic, configured themes, styles and values etc. 
-After every template use,the project is able to compile. This allows to work with architecture and DI, as a black boxes.
+This is a clean mvvm architecture with DI, included base list and toolbar screens logic, configured themes, styles, values etc. 
+After every template use (probably except only Architecture Template), the project is able to compile. This allows to work with architecture and DI, as a black boxes.
 
 ### Main advantages
-- It is framework!
-- in progress
+- It is a framework!
+- Large ability to customize
 
 ### Templates
 ```
@@ -15,7 +15,7 @@ After every template use,the project is able to compile. This allows to work wit
 Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
 
 2. Screen: 
-Add view (activity or fragment), vievmodel, interactor. And resolving in a DI tree.  
+Add view (activity or fragment), vievmodel, interactor class-interface pairs. And resolving thees in a DI tree.  
 There is able to provide repository in interactor inside the template. Screen can be list, toolbar, base etc.
 
 3. Repository: 
@@ -53,10 +53,10 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 ### Basic architecture scheme
 
-![Screenshot](architecture.png)
+![Screenshot](atchitecture.png)
 
 
-### Inherence structure
+### Inheritance structure
 ![Screenshot](inheritance.png)
 
 ### StateList enum graph
