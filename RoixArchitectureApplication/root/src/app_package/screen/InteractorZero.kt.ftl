@@ -1,5 +1,7 @@
 package ${packageName}.buissness.${screenPackage}
 
+import javax.inject.Inject
+
 /**
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates

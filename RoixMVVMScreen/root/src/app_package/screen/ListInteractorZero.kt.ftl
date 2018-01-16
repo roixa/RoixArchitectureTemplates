@@ -2,6 +2,7 @@ package ${packageName}.buissness.${screenPackage}
 
 import ${packageName}.data.models.${itemName}Item
 import io.reactivex.Single
+import javax.inject.Inject
 
 /**
  * Created by roix template

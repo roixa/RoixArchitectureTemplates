@@ -16,7 +16,7 @@ class ${screenName}ViewModel : BaseListViewModel<${itemName}Item>() {
 
     @Inject lateinit var ${screenPackage}Interactor: ${screenName}Interactor
 
-    override fun getInteractor(): IBaseListInteractor<${itemName}Item> = ${screenPackage}Interactor
+    override fun getInteractor(): IBaseListInteractor<${itemName}Item> = ${screenName}Interactor()
 
     override fun getModule(): Module = ${screenName}Module()
 
