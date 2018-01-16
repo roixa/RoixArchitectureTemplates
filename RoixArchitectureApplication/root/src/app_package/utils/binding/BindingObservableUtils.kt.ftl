@@ -14,7 +14,7 @@ object BindingObservableUtils {
             //noinspection AnonymousInnerClass,UnqualifiedInnerClassAccess
             val propertyChangeCallback = object : android.databinding.Observable.OnPropertyChangedCallback() {
                 override fun onPropertyChanged(observable: android.databinding.Observable, i: Int) {
-                    subscriber.onNext(observableField.get())
+                    subscriber.onNext(observableField.get()!!)
                 }
             }
             val value = observableField.get()

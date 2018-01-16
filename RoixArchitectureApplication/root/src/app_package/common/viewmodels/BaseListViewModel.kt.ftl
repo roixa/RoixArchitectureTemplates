@@ -16,7 +16,7 @@ import io.reactivex.Single
  * https://github.com/roixa/RoixArchitectureTemplates
  */
 
-abstract class BaseListViewModel<Item> : BaseDatabindingViewModel() {
+abstract class BaseListViewModel<Item> : BaseLifecycleViewModel() {
 
     val items: ObservableList<Item> = ObservableArrayList<Item>()
 
@@ -64,7 +64,7 @@ abstract class BaseListViewModel<Item> : BaseDatabindingViewModel() {
     //override if needs
     protected open fun getMaxPage(): Int = Int.MAX_VALUE
 
-    protected open fun isLoading(): Boolean = stateList.get().equals(StateList.EMPTY_PROGRESS) || stateList.get().equals(StateList.PAGE_PROGRESS)
+    protected open fun isLoading(): Boolean = stateList.get()!!.equals(StateList.EMPTY_PROGRESS) || stateList.get()!!.equals(StateList.PAGE_PROGRESS)
 
     protected open fun isLastPage(): Boolean = mNextPage > getMaxPage()
 
@@ -104,6 +104,7 @@ abstract class BaseListViewModel<Item> : BaseDatabindingViewModel() {
         subscription.add(
                 toObservable()
                         .withDefaultShedulers()
+						.withDefaultLoadingHandle()
                         .subscribe({ t ->
                             function.invoke(t)
                         }, { e ->
@@ -113,6 +114,7 @@ abstract class BaseListViewModel<Item> : BaseDatabindingViewModel() {
     }
 
     private fun listErrorHandle(error: Throwable) {
+	    errorLiveData.postValue(error)
         if (items.isEmpty()) {
             stateList.set(StateList.EMPTY_ERROR)
         } else {

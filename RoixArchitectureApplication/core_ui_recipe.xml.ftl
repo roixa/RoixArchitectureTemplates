@@ -13,6 +13,15 @@
 	<instantiate from="root/src/app_package/common/activities/BaseToolbarActivity.kt.ftl"
                    to="${escapeXmlAttribute(srcCommonOut)}/activities/BaseToolbarActivity.kt" />
 
+	<instantiate from="root/src/app_package/common/activities/BaseSingleFragmentActivity.kt.ftl"
+                   to="${escapeXmlAttribute(srcCommonOut)}/activities/BaseSingleFragmentActivity.kt" />
+
+	<instantiate from="root/src/app_package/common/fragments/BaseDatabindingFragment.kt.ftl"
+                   to="${escapeXmlAttribute(srcCommonOut)}/fragments/BaseDatabindingFragment.kt" />
+	
+	<instantiate from="root/src/app_package/common/fragments/BaseListFragment.kt.ftl"
+                   to="${escapeXmlAttribute(srcCommonOut)}/fragments/BaseListFragment.kt" />
+
 	<instantiate from="root/src/app_package/common/adapters/BaseDataBindingAdapter.kt.ftl"
                    to="${escapeXmlAttribute(srcCommonOut)}/adapters/BaseDataBindingAdapter.kt" />
 

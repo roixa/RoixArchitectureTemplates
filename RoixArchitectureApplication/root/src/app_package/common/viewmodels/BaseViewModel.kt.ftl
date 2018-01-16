@@ -25,16 +25,17 @@ abstract class BaseViewModel : ViewModel() {
 	
     protected val subscription: CompositeDisposable = CompositeDisposable()
 
-    protected abstract fun getModule(): Module
 
 	private lateinit var viewModelScope: Scope
 
     @Inject lateinit var rxScheduler: RxSchedulersAbs
 
+	protected abstract fun getModule(): Module
+
 	@CallSuper
     open fun onBindView(application : CommonApplication) {
-	   proceedInject(application)
         if (viewsCount == 0) {
+			proceedInject(application)
             onBindFirstView()
         }
         viewsCount++

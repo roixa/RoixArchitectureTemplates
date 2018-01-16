@@ -15,7 +15,7 @@ class ${screenName}Activity : BaseToolbarActivity<${screenName}ViewModel, Activi
 
     override fun getLayoutId(): Int = R.layout.activity_${screenPackage}
 
-    override fun getToolbar(): Toolbar? = binding.toolbar.tb
+    override fun getToolbar(): Toolbar? = binding.toolbar!!.tb
 
 }
 
