@@ -7,8 +7,10 @@ import ${packageName}.R
 import java.util.*
 
 /**
- * Created by belyalov on 11.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
+
 class ItemClickSupport private constructor(private val mRecyclerView: RecyclerView) {
     private val mListeners = ArrayList<MyOnChildAttachStateChangeListener>()
 

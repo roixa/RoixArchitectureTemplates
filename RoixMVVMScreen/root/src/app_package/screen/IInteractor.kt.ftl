@@ -5,4 +5,8 @@ package ${packageName}.buissness.${screenPackage}
  * https://github.com/roixa/RoixArchitectureTemplates
  */
  
+ /**
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
+ */
 interface I${screenName}Interactor

@@ -2,6 +2,10 @@ package ${packageName}.utils.rx.general
 
 import io.reactivex.*
 
+/**
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
+ */
 abstract class RxSchedulersAbs {
 
     abstract val mainThreadScheduler: Scheduler

@@ -5,7 +5,8 @@ import io.reactivex.Observable
 
 
 /**
- * Created by roix on 03.01.2018.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 object BindingObservableUtils {
 

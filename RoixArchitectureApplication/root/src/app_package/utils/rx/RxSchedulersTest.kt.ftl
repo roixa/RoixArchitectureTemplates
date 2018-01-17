@@ -3,6 +3,10 @@ package ${packageName}.utils.rx.general
 import io.reactivex.Scheduler
 import io.reactivex.schedulers.Schedulers
 
+/**
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
+ */
 class RxSchedulersTest : RxSchedulersAbs() {
 
     override val mainThreadScheduler: Scheduler

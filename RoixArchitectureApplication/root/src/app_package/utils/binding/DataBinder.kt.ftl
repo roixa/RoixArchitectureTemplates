@@ -12,7 +12,8 @@ import ${packageName}.ui.common.viewmodels.BaseListViewModel
 import com.squareup.picasso.Picasso
 
 /**
- * Created by roix on 05.12.2017.
+ * Created by roix template
+ * https://github.com/roixa/RoixArchitectureTemplates
  */
 @BindingConversion
 fun convertBooleanToVisibility(visible: Boolean): Int {
