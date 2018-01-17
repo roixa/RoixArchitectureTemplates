@@ -40,7 +40,7 @@
 	/>
 
 	<global id="srcScreenResLayoutOut" type="string"
-		value="${resOut}/${camelCaseToUnderscore(screenName)}/layout"
+		value="${resOut}/../${camelCaseToUnderscore(screenName)}/layout"
 	/>
 
 </globals>
