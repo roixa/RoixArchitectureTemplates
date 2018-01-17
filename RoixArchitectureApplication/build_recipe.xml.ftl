@@ -17,8 +17,8 @@
 
 	<open file="${escapeXmlAttribute(projectOut)}/build.gradle" />	
 
-	<instantiate from="root/resources.gradle.ftl"
-                to="${escapeXmlAttribute(projectOut)}/resources.gradle" />
+	<merge from="root/resources.gradle.ftl"
+                to="${escapeXmlAttribute(projectOut)}/build.gradle" />
 
 
 

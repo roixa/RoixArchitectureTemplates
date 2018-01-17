@@ -41,8 +41,7 @@ abstract class BaseLifecycleActivity<ViewModel : BaseLifecycleViewModel> : AppCo
         setupUi()
     }
 
-	@CallSuper
-    protected open fun <T : BaseLifecycleViewModel> bindViewModel(clazz: Class<T>): T {
+    private fun <T : BaseLifecycleViewModel> bindViewModel(clazz: Class<T>): T {
         val viewModel = ViewModelProviders.of(this).get(clazz)
         viewModel.loadingLiveData.sub { b -> handleProgress(b) }
         viewModel.showMessageDialogLiveData.sub { s -> this.showMessageDialog(s) }

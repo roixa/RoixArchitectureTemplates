@@ -3,6 +3,10 @@
 
    	<merge from="root/AndroidManifest.xml.ftl"
         to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
+		
+	<merge from="root/resources.gradle.ftl"
+                to="${escapeXmlAttribute(projectOut)}/build.gradle" />
+
 
 	<instantiate from="root/src/app_package/screen/Module.kt.ftl"
      	to="${escapeXmlAttribute(srcToothpickScreenOut)}/${screenName}Module.kt" />

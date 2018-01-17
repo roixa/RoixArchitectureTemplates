@@ -35,7 +35,7 @@
 
 
 	<global id="commonResOut" type="string"
-		value="${resOut}"
+		value="${resOut}/common"
 	/>
 
 		<global id="srcCommonPackage" type="string"
