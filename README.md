@@ -8,23 +8,10 @@ After every template use (probably except only Architecture Template), the proje
 ### Main advantages
 - It is a framework!
 - Large ability to customize
+- Separate resource dir for every screen
 - Base Toolbar Activity provides work with navigation view and custom toolbar items
-- Base List Screen provides pagination, pull to refresh and advansed list state (loadings, errors etc).
-- Base Single Fragment Activity manages fragment stack, detached fragments etc.
-
-### Templates
-```
-1. Architecture: 
-Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
-
-2. Screen: 
-Add view (activity or fragment), vievmodel, interactor class-interface pairs. And resolving thees in a DI tree.  
-There is able to provide repository in interactor inside the template. Screen can be list, toolbar, base etc.
-
-3. Repository: 
-Add repository class-interface pair with resolved DI.
-
-```
+- Base List Screen provides pagination, pull to refresh and advansed list state (loadings, errors etc)
+- Base Single Fragment Activity manages fragment stack, detached fragments etc
 
 ### Usage
 ```
@@ -41,6 +28,19 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 
 ```
 
+### Templates
+```
+1. Architecture: 
+Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
+
+2. Screen: 
+Add view (activity or fragment), vievmodel, interactor class-interface pairs. And resolving thees in a DI tree.  
+There is able to provide repository in interactor inside the template. Screen can be list, toolbar, base etc.
+
+3. Repository: 
+Add repository class-interface pair with resolved DI.
+
+```
 
 ### Tools / Libs Utilized
 - Jetbrains Kotlin : https://kotlinlang.org/
