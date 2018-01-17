@@ -16,7 +16,7 @@ class ${screenName}Activity : BaseSingleFragmentActivity<${screenName}ViewModel,
 
     override fun getFragmentContainerId(): Int = R.id.container
 
-    override fun getToolbar(): Toolbar? = binding.toolbar.tb
+    override fun getToolbar(): Toolbar? = binding.toolbar!!.tb
 
     override fun getLayoutId(): Int = R.layout.activity_${screenPackage}
 

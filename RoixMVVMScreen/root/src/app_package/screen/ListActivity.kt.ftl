@@ -23,7 +23,7 @@ class ${screenName}Activity : BaseListActivity<${screenName}ViewModel, Activity$
 
     override fun getSwipeToRefreshLayout(): SwipeRefreshLayout? = binding.srl
 
-    override fun getToolbar(): Toolbar? = binding.toolbar.tb
+    override fun getToolbar(): Toolbar? = binding.toolbar!!.tb
 
     override fun getLayoutId(): Int = R.layout.activity_${screenPackage}
 

@@ -6,14 +6,8 @@
     <data>
 
         <variable
-            name="toolbarType"
-            type="${packageName}.ui.common.view.ToolbarType" />
-
-
-        <variable
             name="viewmodel"
             type="${packageName}.ui.${screenPackage}.viewmodels.${screenName}ViewModel" />
-        <import type="${packageName}.ui.common.viewmodels.BaseListViewModel.StateList"></import>
 
     </data>
 
@@ -22,11 +16,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
-        <include
-            android:id="@+id/toolbar"
-            layout="@layout/toolbar"
-            bind:toolbarType="@{toolbarType}" />
 
     </android.support.constraint.ConstraintLayout>
 

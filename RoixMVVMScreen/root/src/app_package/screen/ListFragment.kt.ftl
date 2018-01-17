@@ -2,7 +2,6 @@ package ${packageName}.ui.${screenPackage}.views
 
 import android.support.v4.widget.SwipeRefreshLayout
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.Toolbar
 import ${packageName}.R
 import ${packageName}.data.models.${itemName}Item
 import ${packageName}.databinding.Fragment${screenName}Binding
@@ -23,9 +22,7 @@ class ${screenName}Fragment : BaseListFragment<${screenName}ViewModel, Fragment$
 
     override fun getSwipeToRefreshLayout(): SwipeRefreshLayout? = binding.srl
 
-    override fun getToolbar(): Toolbar? = binding.toolbar.tb
-
-    override fun getLayoutId(): Int = R.layout.activity_${screenPackage}
+    override fun getLayoutId(): Int = R.layout.fragment_${screenPackage}
 
     override fun getItemLayoutId(): Int = R.layout.item_${itemPackage}
 

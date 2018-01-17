@@ -13,7 +13,7 @@ import ${packageName}.ui.${screenPackage}.viewmodels.${screenName}ViewModel
 
 class ${screenName}Fragment : BaseDatabindingFragment<${screenName}ViewModel, Fragment${screenName}Binding>() {
 
-    override fun getLayoutId(): Int = R.layout.activity_${screenPackage}
+    override fun getLayoutId(): Int = R.layout.fragment_${screenPackage}
 
 }
 
