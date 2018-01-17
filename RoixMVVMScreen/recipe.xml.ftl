@@ -1,15 +1,21 @@
 <?xml version="1.0"?>
 <recipe>
 
-   	<merge from="root/AndroidManifest.xml.ftl"
-        to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
-		
 	<merge from="root/resources.gradle.ftl"
                 to="${escapeXmlAttribute(projectOut)}/build.gradle" />
 
 
+	<#if viewType != 'baseFragment' && viewType != 'listFragment'>
+		<merge from="root/AndroidManifest.xml.ftl"
+			to="${escapeXmlAttribute(manifestOut)}/AndroidManifest.xml" />
+	</#if>
+
 	<instantiate from="root/src/app_package/screen/Module.kt.ftl"
      	to="${escapeXmlAttribute(srcToothpickScreenOut)}/${screenName}Module.kt" />
+
+		
+	<instantiate from="root/src/app_package/screen/empty_strings.xml.ftl"
+     		 	to="${escapeXmlAttribute(srcScreenResValuesOut)}/strings.xml" />
 
 	<#if viewType == 'toolbarActivity'>
 	
@@ -97,5 +103,6 @@
 			</#if>
 
 	</#if>
+	
 
 </recipe>

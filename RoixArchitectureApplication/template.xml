@@ -22,12 +22,15 @@
 		help="The name of the first screen (activity)." />
 
 	<parameter
-		id="isList"
-		name="List screen"
-		type="boolean"
-		default="false"
-		help="Create a list screen." />
-
+        id="viewType"
+        name="Base View Type"
+        type="enum"
+        default="toolbarActivity" >
+        <option id="toolbarActivity">BaseToolbarActivity</option>
+		<option id="baseActivity">BaseDatabindingActivity</option>
+        <option id="listActivity">BaseListActivity</option>
+		<option id="singleFragmentActivity">BaseSingleFragmentActivity</option>
+    </parameter>
 
 	<parameter
 		id="itemName"
@@ -35,9 +38,9 @@
 		type="string"
 		constraints="class|unique|nonempty"
 		default="Page"
-		visibility="isList"
+		visibility= "viewType == 'listActivity' "
 		help="The name of list items." />
-
+		
 
 
 	<parameter

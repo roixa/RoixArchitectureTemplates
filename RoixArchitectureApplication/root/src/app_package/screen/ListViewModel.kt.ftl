@@ -14,9 +14,9 @@ import toothpick.config.Module
  */
 class ${screenName}ViewModel : BaseListViewModel<${itemName}Item>() {
 
-    @Inject lateinit var ${screenPackage}Interactor: ${screenName}Interactor
+    @Inject lateinit var interactor: ${screenName}Interactor
 
-    override fun getInteractor(): IBaseListInteractor<${itemName}Item> = ${screenName}Interactor()
+    override fun getInteractor(): IBaseListInteractor<${itemName}Item> = interactor
 
     override fun getModule(): Module = ${screenName}Module()
 
