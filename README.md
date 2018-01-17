@@ -8,6 +8,9 @@ After every template use (probably except only Architecture Template), the proje
 ### Main advantages
 - It is a framework!
 - Large ability to customize
+- Base Toolbar Activity provides work with navigation view and custom toolbar items
+- Base List Screen provides pagination, pull to refresh and advansed list state (loadings, errors etc).
+- Base Single Fragment Activity managed work with fragment stack, detached fragments etc.
 
 ### Templates
 ```
