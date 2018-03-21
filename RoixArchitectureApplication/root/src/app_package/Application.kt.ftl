@@ -12,7 +12,8 @@ import toothpick.configuration.Configuration.forDevelopment
 import toothpick.configuration.Configuration.forProduction
 import toothpick.registries.FactoryRegistryLocator
 import toothpick.registries.MemberInjectorRegistryLocator
-import toothpick.smoothie.module.SmoothieApplicationModule
+import com.roix.mapchat.toothpick.common.CiceroneModule
+
 
 /**
  * Created by roix template
@@ -29,7 +30,7 @@ class CommonApplication : Application() {
         MemberInjectorRegistryLocator.setRootRegistry(MemberInjectorRegistry())
 
         val appScope = Toothpick.openScope(this)
-        appScope.installModules(SmoothieApplicationModule(this),ApplicationModule(this))
+        appScope.installModules(ApplicationModule(this,Cicerone.create()))
         appScope.bindScopeAnnotation(ApplicationScope::class.java)
     }
 }

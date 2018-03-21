@@ -26,11 +26,7 @@ abstract class BaseToolbarActivity<ViewModel : BaseLifecycleViewModel, DataBindi
     @CallSuper
     override fun setupUi() {
         super.setupUi()
-        setupToolbar(configureToolbar(ToolbarType.Builder(this).default()).build())
-    }
-
-    protected open fun configureToolbar(defaultToolbarType: ToolbarType.Builder): ToolbarType.Builder {
-        return defaultToolbarType
+        setupToolbar((ToolbarType(this)))
     }
 
     @CallSuper
@@ -56,7 +52,7 @@ abstract class BaseToolbarActivity<ViewModel : BaseLifecycleViewModel, DataBindi
      * @param drawableIcon    item icon
      * @param onClickListener action on click
      */
-    fun addToolbarItem(@DrawableRes drawableIcon: Int, onClickListener: View.OnClickListener): View? {
+    fun addToolbarItem(@DrawableRes drawableIcon: Int, onClickListener: View.OnClickListener) {
         val toolbar = getToolbar()
         if (toolbar != null) {
             val view = LayoutInflater.from(this).inflate(R.layout.menu_item, getToolbar(), false)
@@ -65,20 +61,15 @@ abstract class BaseToolbarActivity<ViewModel : BaseLifecycleViewModel, DataBindi
             itemContainer.addView(view)
             val menuItemBinding = MenuItemBinding.bind(view)
             menuItemBinding.icon = ContextCompat.getDrawable(this, drawableIcon)
-            return view
         }
-        return null
     }
 
-    fun addToolbarItem(view: View): View? {
+    fun addToolbarItem(view: View) {
         val toolbar = getToolbar()
-
         if (toolbar != null) {
             val itemContainer = toolbar.ll_items as LinearLayout
             itemContainer.addView(view)
-            return view
         }
-        return null
     }
 
     fun clearToolbarItems() {
@@ -87,6 +78,19 @@ abstract class BaseToolbarActivity<ViewModel : BaseLifecycleViewModel, DataBindi
         if (toolbar != null) {
             val itemContainer = toolbar.ll_items as LinearLayout
             itemContainer.removeAllViews()
+        }
+    }
+
+    fun hideToolbarItems() {
+        val toolbar = getToolbar()
+
+        if (toolbar != null) {
+            val itemContainer = toolbar.ll_items as LinearLayout
+            var i = 0
+            while (i < itemContainer.childCount) {
+                itemContainer.getChildAt(i).visibility = View.GONE
+                i++
+            }
         }
     }
 

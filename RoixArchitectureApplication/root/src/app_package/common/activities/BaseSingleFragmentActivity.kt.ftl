@@ -15,38 +15,9 @@ abstract class BaseSingleFragmentActivity<ViewModel : BaseLifecycleViewModel, Da
 
     @IdRes protected abstract fun getFragmentContainerId(): Int
 
-    protected fun <T:BaseDatabindingFragment<*, *>>setFragment(newFragmentClazz: Class<T>) {
-        fragmentManager.executePendingTransactions()
-
-        val currentFragment = getCurrentFragment()
-        val reusedFragment = fragmentManager.findFragmentByTag(
-                newFragmentClazz
-                        .name)
-        val fragment: BaseDatabindingFragment<*, *>
-
-        if (null != reusedFragment && currentFragment === reusedFragment) {
-            return
-        }
-
-        val tr = fragmentManager.beginTransaction()
-
-        if (null != currentFragment) {
-            tr.detach(currentFragment)
-        }
-
-        if (null == reusedFragment) {
-            fragment = newFragmentClazz.newInstance()
-            tr.add(getFragmentContainerId(), fragment, fragment.javaClass
-                    .name)
-        } else {
-            tr.attach(reusedFragment)
-        }
-        tr.commit()
-    }
-
     protected fun getCurrentFragment(): BaseDatabindingFragment<*, *>? {
         val ret = fragmentManager.findFragmentById(getFragmentContainerId()) ?: return null
-        return  ret as BaseDatabindingFragment<*, *>
+        return ret as BaseDatabindingFragment<*, *>
     }
 
 
@@ -63,15 +34,9 @@ abstract class BaseSingleFragmentActivity<ViewModel : BaseLifecycleViewModel, Da
         }
     }
 
-    override fun goBack() {
-        var count = fragmentManager.backStackEntryCount
-        if(count<2){
-            super.goBack()
-        }
-        else{
-            popBackStack()
-        }
-    }
 
+    override fun onBackPressed() {
+        goBack()
+    }
 
 }

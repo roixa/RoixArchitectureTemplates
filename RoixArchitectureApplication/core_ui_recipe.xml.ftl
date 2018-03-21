@@ -40,14 +40,10 @@
 	<instantiate from="root/src/app_package/common/loading/LoadingLiveData.kt.ftl"
                    to="${escapeXmlAttribute(srcCommonOut)}/loading/LoadingLiveData.kt" />
 
-	<instantiate from="root/src/app_package/common/loading/LoadingObservableBoolean.kt.ftl"
-                   to="${escapeXmlAttribute(srcCommonOut)}/loading/LoadingObservableBoolean.kt" />
 
 	<instantiate from="root/src/app_package/common/view/ToolbarType.kt.ftl"
                    to="${escapeXmlAttribute(srcCommonOut)}/view/ToolbarType.kt" />
 
-	<instantiate from="root/src/app_package/common/viewmodels/BaseDatabindingViewModel.kt.ftl"
-                   to="${escapeXmlAttribute(srcCommonOut)}/viewmodels/BaseDatabindingViewModel.kt" />
 
 	<instantiate from="root/src/app_package/common/viewmodels/BaseLifecycleViewModel.kt.ftl"
                    to="${escapeXmlAttribute(srcCommonOut)}/viewmodels/BaseLifecycleViewModel.kt" />

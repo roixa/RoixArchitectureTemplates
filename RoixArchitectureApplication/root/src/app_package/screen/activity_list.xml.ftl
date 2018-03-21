@@ -13,7 +13,6 @@
         <variable
             name="viewmodel"
             type="${packageName}.ui.${screenPackage}.viewmodels.${screenName}ViewModel" />
-        <import type="${packageName}.ui.common.viewmodels.BaseListViewModel.StateList"></import>
 
     </data>
 
@@ -38,16 +37,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/toolbar" />
-
-        <ProgressBar
-            android:id="@+id/pb_pagination"
-            style="?android:attr/progressBarStyle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="@{viewmodel.stateList.equals(StateList.PAGE_PROGRESS)}"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
 
         <android.support.v4.widget.SwipeRefreshLayout
             android:id="@+id/srl"

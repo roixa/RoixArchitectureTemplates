@@ -13,6 +13,7 @@ import android.widget.Toast
 import ${packageName}.R
 import ${packageName}.application.CommonApplication
 import ${packageName}.ui.common.viewmodels.BaseLifecycleViewModel
+import android.arch.lifecycle.MutableLiveData
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Observable
@@ -93,6 +94,11 @@ abstract class BaseLifecycleActivity<ViewModel : BaseLifecycleViewModel> : AppCo
 
     protected fun <T> Flowable<T>.sub(func: (T) -> Unit) {
         viewModel.toLiveDataFun(this.toObservable()).sub(func)
+    }
+
+	protected fun <T> MutableLiveData<T>.setValueNoHistory(t: T) {
+        value = (t)
+        value = (null)
     }
 
     private fun getViewModelJavaClass(): Class<ViewModel> {

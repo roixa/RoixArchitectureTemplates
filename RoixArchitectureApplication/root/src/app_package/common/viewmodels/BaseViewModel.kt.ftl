@@ -22,20 +22,20 @@ import javax.inject.Inject
 abstract class BaseViewModel : ViewModel() {
 
     private var viewsCount = 0
-	
+
     protected val subscription: CompositeDisposable = CompositeDisposable()
 
 
-	private lateinit var viewModelScope: Scope
+    private lateinit var viewModelScope: Scope
 
     @Inject lateinit var rxScheduler: RxSchedulersAbs
 
-	protected abstract fun getModule(): Module
+    protected abstract fun getModule(): Module
 
-	@CallSuper
-    open fun onBindView(application : CommonApplication) {
+    @CallSuper
+    open fun onBindView(application: CommonApplication) {
         if (viewsCount == 0) {
-			proceedInject(application)
+            proceedInject(application)
             onBindFirstView()
         }
         viewsCount++
@@ -45,13 +45,12 @@ abstract class BaseViewModel : ViewModel() {
     protected open fun onBindFirstView() {
         onBindFirstView(subscription)
     }
-	
-	protected open fun proceedInject(application: CommonApplication) {
+
+    protected open fun proceedInject(application: CommonApplication) {
         viewModelScope = Toothpick.openScopes(application, this)
         viewModelScope.installModules(getModule())
         Toothpick.inject(this, viewModelScope)
     }
-
 
 
     protected open fun onBindFirstView(subscription: CompositeDisposable) {}
@@ -60,15 +59,14 @@ abstract class BaseViewModel : ViewModel() {
     override fun onCleared() {
         super.onCleared()
         subscription.dispose()
-		Toothpick.closeScope(viewModelScope)
-
+        Toothpick.closeScope(viewModelScope)
     }
 
     open fun <T> Observable<T>.withDefaultShedulers(): Observable<T> {
         return compose(rxScheduler.getIOToMainTransformer())
     }
 
-    open fun Completable.withDefaultShedulers(): Completable{
+    open fun Completable.withDefaultShedulers(): Completable {
         return compose(rxScheduler.getIoToMainTransformerCompletable())
     }
 
@@ -103,4 +101,6 @@ abstract class BaseViewModel : ViewModel() {
     }
 
     fun <T> Single<T>.sub(function: (T) -> Unit) = this.toObservable().sub { T -> function.invoke(T) }
+
+
 }

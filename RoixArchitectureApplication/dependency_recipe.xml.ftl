@@ -32,4 +32,6 @@
     <dependency mavenUrl="com.github.stephanenicolas.toothpick:toothpick-runtime:1.0.8"/>
     <dependency mavenUrl="com.github.stephanenicolas.toothpick:smoothie:1.0.8"/>
 
+	<dependency mavenUrl="ru.terrakok.cicerone:cicerone:3.0.0"/>
+
 </recipe>
