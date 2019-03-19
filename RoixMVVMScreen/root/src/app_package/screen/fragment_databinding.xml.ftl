@@ -17,6 +17,6 @@
         android:orientation="vertical">
 
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

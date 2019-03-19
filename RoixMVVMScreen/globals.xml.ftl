@@ -9,16 +9,12 @@
 		value="${camelCaseToUnderscore(screenName)}"
 	/>
 
-	<global id="itemPackage" type="string"
-		value="${camelCaseToUnderscore(itemName)}"
-	/>
-
 	<global id="repositoryPackage" type="string"
-		value="${camelCaseToUnderscore(repositoryName)}"
+		value="${camelCaseToUnderscore(screenName)}"
 	/>
 
 	<global id="srcRepositoryPackageOut" type="string"
-		value="${srcOut}/data/repositories/${camelCaseToUnderscore(repositoryName)}"
+		value="${srcOut}/data/repositories/${camelCaseToUnderscore(screenName)}"
 	/>
 	
 	<global id="srcScreenOut" type="string"

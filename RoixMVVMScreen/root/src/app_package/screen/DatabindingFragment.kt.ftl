@@ -1,6 +1,5 @@
 package ${packageName}.ui.${screenPackage}.views
 
-import android.support.v7.widget.Toolbar
 import ${packageName}.R
 import ${packageName}.databinding.Fragment${screenName}Binding
 import ${packageName}.ui.common.fragments.BaseDatabindingFragment

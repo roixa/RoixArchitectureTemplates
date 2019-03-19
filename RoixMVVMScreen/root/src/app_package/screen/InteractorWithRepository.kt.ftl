@@ -1,7 +1,7 @@
 package ${packageName}.buissness.${screenPackage}
 
-import ${packageName}.data.repositories.${repositoryPackage}.I${repositoryName}Repository
-import ${packageName}.data.repositories.${repositoryPackage}.${repositoryName}Repository
+import ${packageName}.data.repositories.${repositoryPackage}.I${screenName}Repository
+import ${packageName}.data.repositories.${repositoryPackage}.${screenName}Repository
 
 import javax.inject.Inject
 
