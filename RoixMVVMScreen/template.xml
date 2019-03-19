@@ -14,45 +14,46 @@
 		default="Main"
 		help="The name of the first screen (activity)." />
 
-	<parameter
-        id="viewType"
-        name="Base View Type"
-        type="enum"
-        default="toolbarActivity" >
-        <option id="toolbarActivity">BaseToolbarActivity</option>
-		<option id="baseActivity">BaseDatabindingActivity</option>
-        <option id="listActivity">BaseListActivity</option>
-		<option id="singleFragmentActivity">BaseSingleFragmentActivity</option>
-        <option id="baseFragment">BaseDatabindingFragment</option>
-		<option id="listFragment">BaseListFragment</option>
-    </parameter>
-
-	<parameter
-		id="itemName"
-		name="Item  Name"
-		type="string"
-		constraints="class|unique|nonempty"
-		default="Page"
-		visibility= "viewType == 'listActivity' || viewType == 'listFragment'"
-		help="The name of list items." />
-
     <parameter
-        id="provideRepository"
-        name="Provide repository"
+        id="addToolbar"
+        name="Add toolbar to screen"
         type="boolean"
         default="false"
-        help="Provide the existing repository into the screen."/>
+        help="Add toolbar to screen fragment."/>
+
+    <parameter
+        id="useExistingViewModel"
+        name="Use existing ViewModel?"
+        type="boolean"
+        default="false"
+        help="Use existing ViewModel and their scope."/>
 
 
 	<parameter
-		id="repositoryName"
-		name="Repository Name"
+		id="viewModelName"
+		name="ViewModel Name"
 		type="string"
 		constraints="class|unique|nonempty"
-		default="CommonApi"
-		visibility="provideRepository"
+		default="Feature"
+		visibility="useExistingViewModel"
 		help="The name of the existing providing repository." />
 
+	<parameter
+        id="notGenerateRepository"
+        name="Without repository"
+        type="boolean"
+        visibility= "!useExistingViewModel"
+        default="false"
+        help="Do you want not generate Repository?"/>
+
+
+	<parameter
+        id="notGenerateInteractor"
+        name="Without interactor"
+        type="boolean"
+        visibility= "notGenerateRepository"
+        default="false"
+        help="Do you want not generate Interactor?"/>
 
 	<globals file="globals.xml.ftl" />
 

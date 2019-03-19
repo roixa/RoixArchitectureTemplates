@@ -5,10 +5,6 @@
 
 	<global id="manifestOut" type="string" value="${manifestDir}" />
 
-	<global id="srcDaggerOut" type="string"
-		value="${srcOut}/dagger"
-	/>
-
 	<global id="screenPackage" type="string"
 		value="${camelCaseToUnderscore(screenName)}"
 	/>
@@ -21,13 +17,16 @@
 		value="${camelCaseToUnderscore(repositoryName)}"
 	/>
 
+	<global id="srcRepositoryPackageOut" type="string"
+		value="${srcOut}/data/repositories/${camelCaseToUnderscore(repositoryName)}"
+	/>
 	
 	<global id="srcScreenOut" type="string"
 		value="${srcOut}/ui/${camelCaseToUnderscore(screenName)}"
 	/>
 	
 	<global id="srcToothpickScreenOut" type="string"
-		value="${srcOut}/toothpick/${camelCaseToUnderscore(screenName)}"
+		value="${srcOut}/di/${camelCaseToUnderscore(screenName)}"
 	/>
 
 
@@ -35,9 +34,6 @@
 		value="${srcOut}/buissness/${camelCaseToUnderscore(screenName)}"
 	/>
 
-	<global id="srcItemPackageOut" type="string"
-		value="${srcOut}/data/models"
-	/>
 
 	<global id="srcScreenResLayoutOut" type="string"
 		value="${resOut}/../${camelCaseToUnderscore(screenName)}/layout"

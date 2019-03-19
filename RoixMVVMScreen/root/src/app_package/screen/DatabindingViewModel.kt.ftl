@@ -1,8 +1,8 @@
 package ${packageName}.ui.${screenPackage}.viewmodels
 
 import ${packageName}.buissness.${screenPackage}.I${screenName}Interactor
-import ${packageName}.toothpick.${screenPackage}.${screenName}Module
-import ${packageName}.ui.common.viewmodels.BaseLifecycleViewModel
+import ${packageName}.di.${screenPackage}.${screenName}Module
+import ${packageName}.ui.common.viewmodels.BaseViewModel
 import javax.inject.Inject
 import toothpick.config.Module
 
@@ -10,10 +10,10 @@ import toothpick.config.Module
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates
  */
-class ${screenName}ViewModel :BaseLifecycleViewModel() {
+class ${screenName}ViewModel :BaseViewModel() {
 
     @Inject
     protected lateinit var interactor :I${screenName}Interactor
 
-    override fun getModule(): Module = ${screenName}Module()
+    override val module: Module = ${screenName}Module()
 }

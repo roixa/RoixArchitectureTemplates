@@ -9,10 +9,6 @@ import javax.inject.Inject
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates
  */
-class ${screenName}Interactor: I${screenName}Interactor {
-
-    @Inject constructor()
-
-    @Inject lateinit var  ${repositoryPackage}Repository: ${repositoryName}Repository
+class ${screenName}Interactor @Inject constructor(val repository: I${screenName}Repository): I${screenName}Interactor {
 
 }

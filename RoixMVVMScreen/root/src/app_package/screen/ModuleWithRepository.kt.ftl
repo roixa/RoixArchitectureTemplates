@@ -11,5 +11,7 @@ import toothpick.config.Module
 class ${screenName}Module : Module() {
     init {
         bind(I${screenName}Interactor::class.java).to(${screenName}Interactor::class.java).instancesInScope()
+        bind(I${screenName}Repository::class.java).to(${screenName}Repository::class.java).instancesInScope()
+
     }
 }
