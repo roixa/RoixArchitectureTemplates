@@ -27,6 +27,7 @@
         name="Add list to screen"
         type="boolean"
         default="false"
+        visibility= "!addScreenToFeature"
         help="Add list to screen fragment."/>
 
 

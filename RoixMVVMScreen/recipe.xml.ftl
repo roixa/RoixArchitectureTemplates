@@ -16,6 +16,14 @@
 			to="${escapeXmlAttribute(srcExistingFeatureOut)}/views/${screenName}Fragment.kt" />
 
 
+	    <#if addList>
+	        <instantiate from="root/src/app_package/screen/item_list.xml.ftl"
+	     		to="${escapeXmlAttribute(srcExistingFeatureResLayoutOut)}/item_${screenPackage}.xml" />
+
+			<instantiate from="root/src/app_package/screen/ListItem.kt.ftl"
+	     		 to="${escapeXmlAttribute(srcItemPackageOut)}/${screenName}Item.kt" />
+	    </#if>
+
 		<#else>
 
 			<instantiate from="root/src/app_package/screen/empty_strings.xml.ftl"
@@ -27,17 +35,16 @@
 			<instantiate from="root/src/app_package/screen/DatabindingFragment.kt.ftl"
 				to="${escapeXmlAttribute(srcScreenOut)}/views/${screenName}Fragment.kt" />
 
+		    <#if addList>
+			        <instantiate from="root/src/app_package/screen/item_list.xml.ftl"
+			     		to="${escapeXmlAttribute(srcScreenResLayoutOut)}/item_${screenPackage}.xml" />
+
+					<instantiate from="root/src/app_package/screen/ListItem.kt.ftl"
+			     		 to="${escapeXmlAttribute(srcItemPackageOut)}/${screenName}Item.kt" />
+			    </#if>
+
 	</#if>
 
-    <#if addList>
-        <instantiate from="root/src/app_package/screen/item_list.xml.ftl"
-     		to="${escapeXmlAttribute(srcScreenResLayoutOut)}/item_${screenPackage}.xml" />
-
-		<instantiate from="root/src/app_package/screen/ListItem.kt.ftl"
-     		 to="${escapeXmlAttribute(srcItemPackageOut)}/${screenName}Item.kt" />
-
-
-    </#if>
 
 	<#if !addScreenToFeature>
 
@@ -64,7 +71,7 @@
 
 				<instantiate from="root/src/app_package/screen/Repository.kt.ftl"
 				    to="${escapeXmlAttribute(srcRepositoryPackageOut)}/${screenName}Repository.kt" />
-				    
+
 			</#if>
 
 		</#if>

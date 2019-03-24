@@ -24,7 +24,6 @@
 	<global id="srcExistingFeatureOut" type="string"
 		value="${srcOut}/ui/${camelCaseToUnderscore(existingFeatureName)}"
 	/>
-
 	
 	<global id="srcToothpickScreenOut" type="string"
 		value="${srcOut}/di/${camelCaseToUnderscore(screenName)}"
