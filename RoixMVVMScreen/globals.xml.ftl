@@ -35,6 +35,9 @@
 		value="${srcOut}/buissness/${camelCaseToUnderscore(screenName)}"
 	/>
 
+	<global id="srcItemPackageOut" type="string"
+		value="${srcOut}/data/models"
+	/>
 
 	<global id="srcScreenResLayoutOut" type="string"
 		value="${resOut}/../${camelCaseToUnderscore(screenName)}/layout"

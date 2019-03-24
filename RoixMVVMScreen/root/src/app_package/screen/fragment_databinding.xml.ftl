@@ -5,6 +5,14 @@
 
     <data>
 
+        <#if addToolbar>
+
+        <variable
+            name="toolbarType"
+            type="${packageName}.ui.common.view.ToolbarType" />
+
+        </#if>
+
         <#if addScreenToFeature>
 
         <variable
@@ -21,12 +29,40 @@
 
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <#if addToolbar>
+            
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar"
+            bind:toolbarType="@{toolbarType}" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </#if>
+
+
+        <#if addList>
+            
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/srl"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_margin="@dimen/micro"
+            bind:refreshing="@{viewmodel.loadingLiveData}">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </#if>
+
+    </LinearLayout>
 
 </layout>

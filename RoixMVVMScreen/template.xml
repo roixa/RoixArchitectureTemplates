@@ -21,6 +21,15 @@
         default="false"
         help="Add toolbar to screen fragment."/>
 
+
+    <parameter
+        id="addList"
+        name="Add list to screen"
+        type="boolean"
+        default="false"
+        help="Add list to screen fragment."/>
+
+
     <parameter
         id="addScreenToFeature"
         name="Add screen to existing feature?"
