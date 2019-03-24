@@ -1,4 +1,4 @@
-package ${packageName}.data.repositories.${repositoryPackage}
+package ${packageName}.data.repositories.${screenPackage}
 
 /**
  * Created by roix template

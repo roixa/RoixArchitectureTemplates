@@ -9,8 +9,8 @@
 		value="${camelCaseToUnderscore(screenName)}"
 	/>
 
-	<global id="repositoryPackage" type="string"
-		value="${camelCaseToUnderscore(screenName)}"
+	<global id="existingFeaturePackage" type="string"
+		value="${camelCaseToUnderscore(existingFeatureName)}"
 	/>
 
 	<global id="srcRepositoryPackageOut" type="string"
@@ -20,6 +20,11 @@
 	<global id="srcScreenOut" type="string"
 		value="${srcOut}/ui/${camelCaseToUnderscore(screenName)}"
 	/>
+
+	<global id="srcExistingFeatureOut" type="string"
+		value="${srcOut}/ui/${camelCaseToUnderscore(existingFeatureName)}"
+	/>
+
 	
 	<global id="srcToothpickScreenOut" type="string"
 		value="${srcOut}/di/${camelCaseToUnderscore(screenName)}"
@@ -38,5 +43,16 @@
 	<global id="srcScreenResValuesOut" type="string"
 		value="${resOut}/../${camelCaseToUnderscore(screenName)}/values"
 	/>
+
+	<global id="srcExistingFeatureResLayoutOut" type="string"
+		value="${resOut}/../${camelCaseToUnderscore(existingFeatureName)}/layout"
+	/>
+
+	<global id="srcExistingFeatureResValuesOut" type="string"
+		value="${resOut}/../${camelCaseToUnderscore(existingFeatureName)}/values"
+	/>
+
+	<global id="navNavigationResOut" type="string" value="${resOut}/../app/navigation" />
+
 
 </globals>

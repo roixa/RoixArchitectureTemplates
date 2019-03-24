@@ -1,9 +1,9 @@
 <template format="5"
 		revision="1"
 		name="Screen"
-		description="Creates a new MVVM Screen">
+		description="Creates a new Screen">
  
-	<category value="Roix MVVM Architecture"/>
+	<category value="Roix Architecture"/>
  
 
 	<parameter
@@ -11,8 +11,8 @@
 		name="Screen Name"
 		type="string"
 		constraints="class|unique|nonempty"
-		default="Main"
-		help="The name of the first screen (activity)." />
+		default="Feature"
+		help="The name of the new screen and/or feature." />
 
     <parameter
         id="addToolbar"
@@ -22,27 +22,27 @@
         help="Add toolbar to screen fragment."/>
 
     <parameter
-        id="useExistingViewModel"
-        name="Use existing ViewModel?"
+        id="addScreenToFeature"
+        name="Add screen to existing feature?"
         type="boolean"
         default="false"
-        help="Use existing ViewModel and their scope."/>
+        help="You should use existing feature for new screen."/>
 
 
 	<parameter
-		id="viewModelName"
-		name="ViewModel Name"
+		id="existingFeatureName"
+		name="Existing Feature Name"
 		type="string"
-		constraints="class|unique|nonempty"
+		constraints="class|nonempty"
 		default="Feature"
-		visibility="useExistingViewModel"
-		help="The name of the existing providing repository." />
+		visibility="addScreenToFeature"
+		help="The name of existing feature." />
 
 	<parameter
         id="notGenerateRepository"
         name="Without repository"
         type="boolean"
-        visibility= "!useExistingViewModel"
+        visibility= "!addScreenToFeature"
         default="false"
         help="Do you want not generate Repository?"/>
 
@@ -54,6 +54,8 @@
         visibility= "notGenerateRepository"
         default="false"
         help="Do you want not generate Interactor?"/>
+
+    <!-- <globals file="feature_globals.xml.ftl" /> -->
 
 	<globals file="globals.xml.ftl" />
 

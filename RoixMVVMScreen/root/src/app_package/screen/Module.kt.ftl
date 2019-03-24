@@ -1,15 +1,15 @@
-package ${packageName}.di.${screenPackage}
+package ${packageName}.di.${featurePackage}
 
-import ${packageName}.buissness.${screenPackage}.I${screenName}Interactor
-import ${packageName}.buissness.${screenPackage}.${screenName}Interactor
+import ${packageName}.buissness.${featurePackage}.I${featureName}Interactor
+import ${packageName}.buissness.${featurePackage}.${featureName}Interactor
 import toothpick.config.Module
 
 /**
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates
  */
-class ${screenName}Module : Module() {
+class ${featureName}Module : Module() {
     init {
-        bind(I${screenName}Interactor::class.java).to(${screenName}Interactor::class.java).instancesInScope()
+        bind(I${featureName}Interactor::class.java).to(${featureName}Interactor::class.java).instancesInScope()
     }
 }

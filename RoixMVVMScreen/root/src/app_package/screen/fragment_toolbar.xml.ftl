@@ -10,14 +10,23 @@
             type="${packageName}.ui.common.view.ToolbarType" />
 
 
+        <#if addScreenToFeature>
+
+        <variable
+            name="viewmodel"
+            type="${packageName}.ui.${existingFeaturePackage}.viewmodels.${existingFeatureName}ViewModel" />
+
+            <#else>
+
         <variable
             name="viewmodel"
             type="${packageName}.ui.${screenPackage}.viewmodels.${screenName}ViewModel" />
-        <import type="${packageName}.ui.common.viewmodels.BaseListViewModel.StateList"></import>
+
+        </#if>
 
     </data>
 
-    <android.support.constraint.ConstraintLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
@@ -28,6 +37,6 @@
             layout="@layout/toolbar"
             bind:toolbarType="@{toolbarType}" />
 
-    </android.support.constraint.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

@@ -5,9 +5,19 @@
 
     <data>
 
+        <#if addScreenToFeature>
+
+        <variable
+            name="viewmodel"
+            type="${packageName}.ui.${existingFeaturePackage}.viewmodels.${existingFeatureName}ViewModel" />
+
+            <#else>
+
         <variable
             name="viewmodel"
             type="${packageName}.ui.${screenPackage}.viewmodels.${screenName}ViewModel" />
+
+        </#if>
 
     </data>
 
