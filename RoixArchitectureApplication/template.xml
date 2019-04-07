@@ -1,9 +1,10 @@
 <template format="5"
 		revision="1"
-		name="MVVMArchitecture"
+		name="Architecture roix"
 		description="Creates a new MVVM application">
  
-	<category value="Roix MVVM Architecture"/>
+    <category value="Activity" />
+    <formfactor value="Mobile" />
  
 	<parameter
 		id="applicationName"
@@ -18,45 +19,60 @@
 		name="Screen Name"
 		type="string"
 		constraints="class|unique|nonempty"
-		default="Main"
-		help="The name of the first screen (activity)." />
-
-	<parameter
-        id="viewType"
-        name="Base View Type"
-        type="enum"
-        default="toolbarActivity" >
-        <option id="toolbarActivity">BaseToolbarActivity</option>
-		<option id="baseActivity">BaseDatabindingActivity</option>
-        <option id="listActivity">BaseListActivity</option>
-		<option id="singleFragmentActivity">BaseSingleFragmentActivity</option>
-    </parameter>
-
-	<parameter
-		id="itemName"
-		name="Item  Name"
-		type="string"
-		constraints="class|unique|nonempty"
-		default="Page"
-		visibility= "viewType == 'listActivity' "
-		help="The name of list items." />
-		
-
-
-	<parameter
-		id="repositoryName"
-		name="Repository Name"
-		type="string"
-		constraints="class|unique|nonempty"
-		default="CommonApi"
-		help="The name of the first repository." />
+		default="Feature"
+		help="The name of the new screen and/or feature." />
 
     <parameter
-        id="provideRepository"
-        name="Provide repository"
+        id="addToolbar"
+        name="Add toolbar to screen"
         type="boolean"
         default="true"
-        help="Provide the first repository into the screen."/>
+        help="Add toolbar to screen fragment."/>
+
+
+    <parameter
+        id="addList"
+        name="Add list to screen"
+        type="boolean"
+        default="false"
+        visibility= "!addScreenToFeature"
+        help="Add list to screen fragment."/>
+
+
+    <parameter
+        id="addScreenToFeature"
+        name="Add screen to existing feature?"
+        type="boolean"
+        default="false"
+        visibility= "false"
+        help="You should use existing feature for new screen."/>
+
+
+	<parameter
+		id="existingFeatureName"
+		name="Existing Feature Name"
+		type="string"
+		constraints="class|nonempty"
+		default="Feature"
+		visibility="addScreenToFeature"
+		help="The name of existing feature." />
+
+	<parameter
+        id="notGenerateRepository"
+        name="Without repository"
+        type="boolean"
+        visibility= "!addScreenToFeature"
+        default="false"
+        help="Do you want not generate Repository?"/>
+
+
+	<parameter
+        id="notGenerateInteractor"
+        name="Without interactor"
+        type="boolean"
+        visibility= "notGenerateRepository"
+        default="false"
+        help="Do you want not generate Interactor?"/>
 
 	<globals file="core_globals.xml.ftl" />
 	<globals file="screen_globals.xml.ftl" />
@@ -66,6 +82,7 @@
     <execute file="core_resources_recipe.xml.ftl" />
     <execute file="core_ui_recipe.xml.ftl" />
     <execute file="toothpick_recipe.xml.ftl" />
+    <execute file="delegates_recipe.xml.ftl" />
     <execute file="screen_recipe.xml.ftl" />
     <execute file="dependency_recipe.xml.ftl" />
 

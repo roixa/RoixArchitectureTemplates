@@ -16,7 +16,7 @@
 		value="${srcOut}/application"
 	/>
 	<global id="srcToothpickOut" type="string"
-		value="${srcOut}/toothpick"
+		value="${srcOut}/di"
 	/>
 	
 	<global id="srcDataOut" type="string"
@@ -25,6 +25,10 @@
 	<global id="srcCommonOut" type="string"
 		value="${srcOut}/ui/common"
 	/>
+	<global id="srcDelegatesOut" type="string"
+		value="${srcOut}/ui/common/delegates"
+	/>
+
 	<global id="srcUtilsOut" type="string"
 		value="${srcOut}/utils"
 	/>
@@ -38,8 +42,14 @@
 		value="${resOut}/common"
 	/>
 
-		<global id="srcCommonPackage" type="string"
+	<global id="srcCommonPackage" type="string"
 		value="${packageName}.ui.common" 
 	/>
+
+	<global id="appResOut" type="string" value="${resOut}/../res/app" />
+
+	<global id="srcAppScreenOut" type="string"
+		value="${srcOut}/ui/app"
+ 	/>
 
 </globals>

@@ -1,7 +1,7 @@
-package ${packageName}.data.repositories.${repositoryPackage}
+package ${packageName}.data.repositories.${screenPackage}
 
 /**
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates
  */
-interface I${repositoryName}Repository 
+interface I${screenName}Repository 

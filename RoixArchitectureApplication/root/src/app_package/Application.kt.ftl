@@ -4,15 +4,14 @@ import android.app.Application
 import ${packageName}.BuildConfig
 import ${packageName}.FactoryRegistry
 import ${packageName}.MemberInjectorRegistry
-import ${packageName}.toothpick.common.ApplicationModule
-import ${packageName}.toothpick.common.ApplicationScope
+import ${packageName}.di.app.ApplicationModule
+import ${packageName}.di.app.ApplicationScope
 import toothpick.Toothpick
 import toothpick.Toothpick.setConfiguration
 import toothpick.configuration.Configuration.forDevelopment
 import toothpick.configuration.Configuration.forProduction
 import toothpick.registries.FactoryRegistryLocator
 import toothpick.registries.MemberInjectorRegistryLocator
-import com.roix.mapchat.toothpick.common.CiceroneModule
 
 
 /**
@@ -30,7 +29,7 @@ class CommonApplication : Application() {
         MemberInjectorRegistryLocator.setRootRegistry(MemberInjectorRegistry())
 
         val appScope = Toothpick.openScope(this)
-        appScope.installModules(ApplicationModule(this,Cicerone.create()))
+        appScope.installModules(ApplicationModule(this))
         appScope.bindScopeAnnotation(ApplicationScope::class.java)
     }
 }

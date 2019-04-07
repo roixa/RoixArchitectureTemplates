@@ -1,222 +1,77 @@
 package ${packageName}.ui.common.fragments
 
-import android.annotation.SuppressLint
-import android.app.Fragment
-import android.app.ProgressDialog
-import android.arch.lifecycle.*
-import android.content.Context
-import android.app.Activity
-import ru.terrakok.cicerone.Navigator
-import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
+
 import android.os.Bundle
-import android.support.annotation.CallSuper
-import android.support.annotation.IdRes
-import android.support.v4.app.FragmentActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
-import com.android.databinding.library.baseAdapters.BR
-import ${packageName}.R
-import ${packageName}.application.CommonApplication
-import ${packageName}.ui.common.viewmodels.BaseLifecycleViewModel
-import io.reactivex.Completable
-import io.reactivex.Flowable
-import io.reactivex.Observable
-import io.reactivex.Single
+import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.ViewDataBinding
+import androidx.fragment.app.Fragment
+import ${packageName}.ui.common.delegates.view.databinding.DatabindingHandleDelegate
+import ${packageName}.ui.common.delegates.view.databinding.IDatabindingHandleDelegate
+import ${packageName}.ui.common.delegates.view.databinding.LayoutIdProvider
+import ${packageName}.ui.common.delegates.view.sub_livedata.ILiveDataSubscriptionDelegate
+import ${packageName}.ui.common.delegates.view.sub_livedata.LiveDataSubscriptionDelegate
+import ${packageName}.ui.common.delegates.vvm.core.IViewModelHandleDelegate
+import ${packageName}.ui.common.delegates.vvm.core.ViewModelHandleDelegate
+import ${packageName}.ui.common.delegates.vvm.error.ErrorHandleViewDelegate
+import ${packageName}.ui.common.delegates.vvm.error.IErrorHandleViewDelegate
+import ${packageName}.ui.common.delegates.vvm.loading.ILoadingHandleDelegate
+import ${packageName}.ui.common.delegates.vvm.loading.LoadingHandleDelegate
+import ${packageName}.ui.common.delegates.vvm.message.IShowMessageDelegate
+import ${packageName}.ui.common.delegates.vvm.message.ShowMessageDelegate
+import ${packageName}.ui.common.delegates.vvm.navigation.INavigationDelegate
+import ${packageName}.ui.common.delegates.vvm.navigation.NavigationDelegate
+import ${packageName}.ui.common.viewmodels.BaseViewModel
 import java.lang.reflect.ParameterizedType
 
 /**
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates
  */
-abstract class BaseDatabindingFragment<ViewModel : BaseLifecycleViewModel, DataBinding : ViewDataBinding> : Fragment() {
+abstract class BaseDatabindingFragment<ViewModel : BaseViewModel, DataBinding : ViewDataBinding> : Fragment()
+        , LayoutIdProvider
+        , IDatabindingHandleDelegate<DataBinding,ViewModel> by DatabindingHandleDelegate()
+        , ILiveDataSubscriptionDelegate by LiveDataSubscriptionDelegate()
+        , IErrorHandleViewDelegate by ErrorHandleViewDelegate()
+        , IShowMessageDelegate by ShowMessageDelegate()
+        , ILoadingHandleDelegate by LoadingHandleDelegate()
+        , IViewModelHandleDelegate<ViewModel> by ViewModelHandleDelegate<ViewModel>()
+        , INavigationDelegate by NavigationDelegate() {
 
-    protected lateinit var viewModel: ViewModel
-
-    protected lateinit var binding: DataBinding
-
-    //TODO: using global progressDialog design pattern is depricated
-    private var progressDialog: ProgressDialog?=null
-
-
-    //TODO strange bug after cicerone
-    protected lateinit var mActivity: Activity
-
-    protected open fun getNavigator(): Navigator? = null
-
-    abstract fun getLayoutId(): Int
-
-    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.d("boux", "fragment onCreate " + javaClass)
-        viewModel = bindViewModel(getViewModelJavaClass())
+        initViewModel(activity as AppCompatActivity,getViewModelJavaClass() )
+        initLoadingHandle(this, viewModel)
+
+        initLiveDataSubscription(this)
+        initErrorHandle(this, viewModel)
+        initShowMessageHandle(activity!!, this, viewModel)
+
+
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        Log.d("boux", "fragment onCreateView " + javaClass)
+    open fun setupBinding() {}
 
-        binding = DataBindingUtil.inflate(inflater!!, getLayoutId(), container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        viewModel.onBindView(activity!!.application )
         setupUi()
+        return initBinding(activity as AppCompatActivity, layoutId, inflater, container, viewModel).root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        initNavigationHandle(binding.root, this, viewModel)
         setupBinding()
-        return binding.root
     }
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        mActivity=context as Activity
-    }
-
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        refresh()
-    }
-
 
     protected open fun setupUi() {
-        progressDialog = ProgressDialog(mActivity)
-        progressDialog?.run {
-            setMessage(getString(R.string.text_dialog_progress))
-            setCancelable(false)
-        }
 
     }
-
-    @CallSuper
-    protected open fun setupBinding() {
-        with(binding) {
-            setVariable(BR.viewmodel, viewModel)
-            setLifecycleOwner(mActivity as LifecycleOwner)
-        }
-    }
-
-
-    //handle this if you want to refresh data in a reattached fragment
-    protected open fun refresh() {
-
-    }
-
-    open fun goBack(): Boolean {//return used in fragment
-        return false
-    }
-
-    override fun onResume() {
-        super.onResume()
-        val navigator = getNavigator()
-        if (navigator != null) {
-            viewModel.navigatorHolder.setNavigator(navigator)
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        val navigator = getNavigator()
-        if (navigator != null) {
-            viewModel.navigatorHolder.removeNavigator()
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        if (progressDialog != null && progressDialog?.isShowing==true) {
-            progressDialog?.cancel()
-        }
-
-        //TODO maybe use di
-        if(BuildConfig.DEBUG){
-            //LeakCanary.refWatcher(mActivity).buildAndInstall().watch(this)
-        }
-    }
-
-    @CallSuper
-    protected open fun <T : BaseLifecycleViewModel> bindViewModel(clazz: Class<T>): T {
-        val viewModel = ViewModelProviders.of(mActivity as FragmentActivity).get(clazz)
-        viewModel.loadingLiveData.sub { b -> if (b != null) handleProgress(b) }
-        viewModel.showMessageDialogLiveData.sub { s -> if (s != null) this.showMessageDialog(s) }
-        viewModel.errorLiveData.sub { t -> if (t != null) handleError(t) }
-        viewModel.onBindView(mActivity.application as CommonApplication)
-        return viewModel
-    }
-
-
-    protected open fun handleProgress(isProgress: Boolean) {
-        if (progressDialog != null) {
-            if (isProgress) {
-                progressDialog?.show()
-            } else {
-                progressDialog?.hide()
-            }
-        }
-    }
-
-    protected open fun showMessageDialog(message: String) {
-        //Toast.makeText(activity, message, Toast.LENGTH_LONG).show()
-    }
-
-    protected open fun handleError(throwable: Throwable) {
-        //Toast.makeText(activity, throwable.message, Toast.LENGTH_LONG).show()
-    }
-
-    protected fun <T> LiveData<T>.sub(func: (T?) -> Unit) {
-        observe(mActivity as FragmentActivity, Observer { T -> func.invoke(T) })
-    }
-
-    protected fun <T> LiveData<T>.subNoHistory(func: (T?) -> Unit) {
-        var isUsed = false
-        observe(mActivity as FragmentActivity, Observer { T ->
-            if (!isUsed) {
-                func.invoke(T)
-                isUsed = true
-            }
-        })
-    }
-
-
-    protected fun <T> Observable<T>.subNoHistory(func: (T?) -> Unit) {
-        viewModel.toLiveDataFun(this).subNoHistory(func)
-    }
-
-    protected fun <T> Single<T>.subNoHistory(func: (T?) -> Unit) {
-        viewModel.toLiveDataFun(this.toObservable()).subNoHistory(func)
-    }
-
-    protected fun Completable.subNoHistory(func: (Boolean?) -> Unit) {
-        viewModel.toLiveDataFun(this).subNoHistory(func)
-    }
-
-    protected fun <T> Flowable<T>.subNoHistory(func: (T?) -> Unit) {
-        viewModel.toLiveDataFun(this.toObservable()).subNoHistory(func)
-    }
-
-    protected fun <T> Observable<T>.sub(func: (T?) -> Unit) {
-        viewModel.toLiveDataFun(this).sub(func)
-    }
-
-    protected fun <T> Single<T>.sub(func: (T?) -> Unit) {
-        viewModel.toLiveDataFun(this.toObservable()).sub(func)
-    }
-
-    protected fun Completable.sub(func: (Boolean?) -> Unit) {
-        viewModel.toLiveDataFun(this).sub(func)
-    }
-
-    protected fun <T> Flowable<T>.sub(func: (T?) -> Unit) {
-        viewModel.toLiveDataFun(this.toObservable()).sub(func)
-    }
-
-
-    fun <T> MutableLiveData<T>.setValueNoHistory(t: T) {
-        value = (t)
-        value = (null)
-    }
-
 
     private fun getViewModelJavaClass(): Class<ViewModel> {
         return (this.javaClass.genericSuperclass as ParameterizedType).actualTypeArguments[0] as Class<ViewModel>
     }
-
 
 }

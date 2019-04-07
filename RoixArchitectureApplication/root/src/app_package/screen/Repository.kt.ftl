@@ -1,5 +1,4 @@
-package ${packageName}.data.repositories.${repositoryPackage}
-import ${packageName}.toothpick.common.ApplicationScope
+package ${packageName}.data.repositories.${screenPackage}
 import javax.inject.Inject
 
 
@@ -7,7 +6,6 @@ import javax.inject.Inject
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates
  */
- @ApplicationScope
-class ${repositoryName}Repository : I${repositoryName}Repository {
+class ${screenName}Repository : I${screenName}Repository {
 	@Inject constructor(){}
 }

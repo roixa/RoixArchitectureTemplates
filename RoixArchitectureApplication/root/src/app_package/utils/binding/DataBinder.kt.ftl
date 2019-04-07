@@ -1,14 +1,12 @@
 package ${packageName}.utils.binding
 
-import android.databinding.BindingAdapter
-import android.databinding.BindingConversion
-import android.support.annotation.ColorRes
-import android.support.annotation.DrawableRes
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
+import androidx.annotation.ColorRes
+import androidx.annotation.DrawableRes
+import androidx.core.content.ContextCompat
+import androidx.databinding.BindingAdapter
+import androidx.databinding.BindingConversion
 import android.view.View
 import android.widget.ImageView
-import ${packageName}.ui.common.viewmodels.BaseListViewModel
 import com.squareup.picasso.Picasso
 
 /**
@@ -27,12 +25,7 @@ fun setSrcVector(imageView: ImageView, @DrawableRes res: Int) {
 
 @BindingAdapter("bind:imageUrl")
 fun setImageUrl(imageView: ImageView, url: String) {
-    Picasso.with(imageView.context).load(url).into(imageView)
-}
-
-@BindingAdapter("bind:refreshing")
-fun setSrcCompatRefreshing(layout: SwipeRefreshLayout, state: BaseListViewModel.StateList) {
-    layout.isRefreshing = state == BaseListViewModel.StateList.REFRESH
+    Picasso.get().load(url).into(imageView)
 }
 
 

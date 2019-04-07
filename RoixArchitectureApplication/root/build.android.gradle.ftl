@@ -1,5 +1,5 @@
 android {
-	buildTypes {
+    buildTypes {
         debug {
             debuggable true
 

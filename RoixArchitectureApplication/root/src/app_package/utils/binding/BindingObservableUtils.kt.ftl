@@ -1,7 +1,8 @@
 package ${packageName}.utils.binding
 
-import android.databinding.*
+import androidx.databinding.*
 import io.reactivex.Observable
+import io.reactivex.Observable.create
 
 
 /**
@@ -11,10 +12,10 @@ import io.reactivex.Observable
 object BindingObservableUtils {
 
     fun <T> getFieldObservable(observableField: ObservableField<T>): Observable<T> {
-        return Observable.create({ subscriber ->
+        return create { subscriber ->
             //noinspection AnonymousInnerClass,UnqualifiedInnerClassAccess
-            val propertyChangeCallback = object : android.databinding.Observable.OnPropertyChangedCallback() {
-                override fun onPropertyChanged(observable: android.databinding.Observable, i: Int) {
+            val propertyChangeCallback = object : androidx.databinding.Observable.OnPropertyChangedCallback() {
+                override fun onPropertyChanged(observable: androidx.databinding.Observable, i: Int) {
                     subscriber.onNext(observableField.get()!!)
                 }
             }
@@ -25,11 +26,11 @@ object BindingObservableUtils {
 
             observableField.addOnPropertyChangedCallback(propertyChangeCallback)
             subscriber.setCancellable({ observableField.removeOnPropertyChangedCallback(propertyChangeCallback) })
-        })
+        }
     }
 
     fun <T> getListObservable(list: ObservableList<T>): Observable<List<T>> {
-        return Observable.create({ subscriber ->
+        return create { subscriber ->
             val onListChangedCallback = object : ObservableList.OnListChangedCallback<ObservableList<T>>() {
                 override fun onChanged(t: ObservableList<T>) {}
 
@@ -49,14 +50,14 @@ object BindingObservableUtils {
             }
             list.addOnListChangedCallback(onListChangedCallback)
             subscriber.setCancellable({ list.removeOnListChangedCallback(onListChangedCallback) })
-        })
+        }
     }
 
     fun getFieldObservable(observableField: ObservableInt): Observable<Int> {
-        return Observable.create({ subscriber ->
+        return create { subscriber ->
             //noinspection AnonymousInnerClass,UnqualifiedInnerClassAccess
-            val propertyChangeCallback = object : android.databinding.Observable.OnPropertyChangedCallback() {
-                override fun onPropertyChanged(observable: android.databinding.Observable, i: Int) {
+            val propertyChangeCallback = object : androidx.databinding.Observable.OnPropertyChangedCallback() {
+                override fun onPropertyChanged(observable: androidx.databinding.Observable, i: Int) {
                     subscriber.onNext(observableField.get())
                 }
             }
@@ -64,14 +65,14 @@ object BindingObservableUtils {
 
             observableField.addOnPropertyChangedCallback(propertyChangeCallback)
             subscriber.setCancellable({ observableField.removeOnPropertyChangedCallback(propertyChangeCallback) })
-        })
+        }
     }
 
     fun getFieldObservable(observableField: ObservableBoolean): Observable<Boolean> {
-        return Observable.create({ subscriber ->
+        return create { subscriber ->
             //noinspection AnonymousInnerClass,UnqualifiedInnerClassAccess
-            val propertyChangeCallback = object : android.databinding.Observable.OnPropertyChangedCallback() {
-                override fun onPropertyChanged(observable: android.databinding.Observable, i: Int) {
+            val propertyChangeCallback = object : androidx.databinding.Observable.OnPropertyChangedCallback() {
+                override fun onPropertyChanged(observable: androidx.databinding.Observable, i: Int) {
                     subscriber.onNext(observableField.get())
                 }
             }
@@ -79,14 +80,14 @@ object BindingObservableUtils {
 
             observableField.addOnPropertyChangedCallback(propertyChangeCallback)
             subscriber.setCancellable({ observableField.removeOnPropertyChangedCallback(propertyChangeCallback) })
-        })
+        }
     }
 
     fun getBaseObservable(observableField: BaseObservable): Observable<BaseObservable> {
-        return Observable.create({ subscriber ->
+        return create { subscriber ->
             //noinspection AnonymousInnerClass,UnqualifiedInnerClassAccess
-            val propertyChangeCallback = object : android.databinding.Observable.OnPropertyChangedCallback() {
-                override fun onPropertyChanged(observable: android.databinding.Observable, i: Int) {
+            val propertyChangeCallback = object : androidx.databinding.Observable.OnPropertyChangedCallback() {
+                override fun onPropertyChanged(observable: androidx.databinding.Observable, i: Int) {
                     subscriber.onNext(observableField)
                 }
             }
@@ -94,7 +95,7 @@ object BindingObservableUtils {
 
             observableField.addOnPropertyChangedCallback(propertyChangeCallback)
             subscriber.setCancellable({ observableField.removeOnPropertyChangedCallback(propertyChangeCallback) })
-        })
+        }
     }
 }
 

@@ -4,7 +4,6 @@
 	<instantiate from="root/res/common/drawable/ic_back.xml.ftl"
                 to="${escapeXmlAttribute(commonResOut)}/drawable/ic_back.xml" />
 
-
 	<instantiate from="root/res/common/drawable/ic_navigation_menu.xml.ftl"
                 to="${escapeXmlAttribute(commonResOut)}/drawable/ic_navigation_menu.xml" />
 

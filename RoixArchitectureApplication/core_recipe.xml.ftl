@@ -25,6 +25,17 @@
 	<instantiate from="root/src/app_package/utils/ui/ItemClickSupport.kt.ftl"
                    to="${escapeXmlAttribute(srcUtilsOut)}/ui/ItemClickSupport.kt" />
 
+	<instantiate from="root/src/app_package/utils/ui/LiveDataExtensions.kt.ftl"
+                   to="${escapeXmlAttribute(srcUtilsOut)}/ui/LiveDataExtensions.kt" />
+
+ 	<instantiate from="root/res/common/layout/navigation.xml.ftl"
+			to="${escapeXmlAttribute(appResOut)}/navigation/app_nav_graph.xml" />
+
+ 	<instantiate from="root/res/common/layout/activity_app.xml.ftl"
+			to="${escapeXmlAttribute(appResOut)}/layout/activity_app.xml" />
+
+	<instantiate from="root/src/app_package/AppActivity.kt.ftl"
+				to="${escapeXmlAttribute(srcAppScreenOut)}/views/AppActivity.kt" />
 
 
 </recipe>

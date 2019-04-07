@@ -1,3 +1,4 @@
+
 android {
 	buildTypes {
         debug {
@@ -44,10 +45,5 @@ kapt {
     }
 }
 
-apply plugin: 'kotlin-android'
-
-apply plugin: 'kotlin-android-extensions'
-
-apply plugin: "kotlin-kapt"
-
 apply from: "resources.gradle"
+

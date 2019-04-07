@@ -10,7 +10,7 @@
             type="${packageName}.ui.common.view.ToolbarType" />
     </data>
 
-    <android.support.v7.widget.Toolbar
+    <androidx.appcompat.widget.Toolbar
         android:id="@+id/tb"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -87,6 +87,6 @@
 
         </RelativeLayout>
 
-    </android.support.v7.widget.Toolbar>
+    </androidx.appcompat.widget.Toolbar>
 
 </layout>

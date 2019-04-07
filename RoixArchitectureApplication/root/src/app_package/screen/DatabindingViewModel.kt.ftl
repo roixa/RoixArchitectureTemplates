@@ -1,8 +1,15 @@
 package ${packageName}.ui.${screenPackage}.viewmodels
 
+<#if !notGenerateInteractor>
 import ${packageName}.buissness.${screenPackage}.I${screenName}Interactor
-import ${packageName}.toothpick.${screenPackage}.${screenName}Module
-import ${packageName}.ui.common.viewmodels.BaseLifecycleViewModel
+</#if>
+import ${packageName}.di.${screenPackage}.${screenName}Module
+<#if addList>
+import ${packageName}.ui.common.viewmodels.BaseListViewModel
+import ${packageName}.data.models.${screenName}Item
+	<#else>
+import ${packageName}.ui.common.viewmodels.BaseViewModel
+</#if>
 import javax.inject.Inject
 import toothpick.config.Module
 
@@ -10,10 +17,17 @@ import toothpick.config.Module
  * Created by roix template
  * https://github.com/roixa/RoixArchitectureTemplates
  */
-class ${screenName}ViewModel :BaseLifecycleViewModel() {
+ <#if addList>
+class ${screenName}ViewModel : BaseListViewModel<${screenName}Item>() {
+	<#else>
+class ${screenName}ViewModel :BaseViewModel() {
+</#if>
 
+
+<#if !notGenerateInteractor>
     @Inject
-    protected lateinit var ${screenPackage}Interactor :I${screenName}Interactor
+    protected lateinit var interactor :I${screenName}Interactor
+</#if>
 
-    override fun getModule(): Module = ${screenName}Module()
+    override val module: Module = ${screenName}Module()
 }
