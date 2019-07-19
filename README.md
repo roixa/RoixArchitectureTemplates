@@ -6,12 +6,9 @@ This is a clean mvvm architecture with DI, included base list and toolbar screen
 After every template use (probably except only Architecture Template), the project is able to compile. This allows to work with architecture and DI, as a black boxes.
 
 ### Main advantages
-- It is a framework!
-- Large ability to customize
+- Compilable and simple usage
+- Implement DI, navigation, databinding logic
 - Separate resource dir for every screen
-- Base Toolbar Activity provides work with navigation view and custom toolbar items
-- Base List Screen provides pagination, pull to refresh and advansed list state (loadings, errors etc)
-- Base Single Fragment Activity manages fragment stack, detached fragments etc
 
 ### Usage
 ```
@@ -34,17 +31,16 @@ to folder ${AndroidStudioDir}/plugins/android/lib/templates/activities
 Create base classes and the first screen and the repository, and configure resourses, manifest, .gradle files.
 
 2. Screen: 
-Add view (activity or fragment), vievmodel, interactor class-interface pairs. And resolving thees in a DI tree.  
-There is able to provide repository in interactor inside the template. Screen can be list, toolbar, base etc.
+Add view (activity or fragment), vievmodel, interactor, repository class-interface pairs. And resolving thees in a DI tree.  
+Screen can be list, toolbar, etc.
 
-3. Repository: 
-Add repository class-interface pair with resolved DI.
 
 ```
 
 ### Tools / Libs Utilized
 - Jetbrains Kotlin : https://kotlinlang.org/
 - Android Architecture Components : https://developer.android.com/topic/libraries/architecture/index.html
+- Navigation Component
 - Databinding : https://developer.android.com/topic/libraries/data-binding/index.html
 - Toothpick Dependency Injection : https://github.com/stephanenicolas/toothpick
 - Dagger2 (in dagger_version branch) : https://github.com/google/dagger
@@ -56,12 +52,9 @@ Add repository class-interface pair with resolved DI.
 
 ### Basic architecture scheme
 
-![Screenshot](atchitecture.png)
+![Screenshot](scheme.png)
 
 
-### Inheritance structure
+### Inheritance structure DEPRECATED
 ![Screenshot](inheritance.png)
-
-### StateList enum graph
-![slate_list](https://drive.google.com/uc?export=download&id=1692blYaVibwyYC-zA8j3IFx-7END81jQ)
 
