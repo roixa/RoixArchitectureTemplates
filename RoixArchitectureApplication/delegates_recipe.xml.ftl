@@ -88,12 +88,12 @@
 
     <instantiate from="root/src/app_package/common/delegates/vvm/message/IShowMessageDelegate.kt.ftl"
                    to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/message/IShowMessageDelegate.kt" />
-    <instantiate from="root/src/app_package/common/delegates/vvm/loading/IShowMessageHandleViewModelDelegate.kt.ftl"
-                   to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/loading/IShowMessageHandleViewModelDelegate.kt" />
-    <instantiate from="root/src/app_package/common/delegates/vvm/loading/ShowMessageDelegate.kt.ftl"
-                   to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/loading/ShowMessageDelegate.kt" />
-    <instantiate from="root/src/app_package/common/delegates/vvm/loading/ShowMessageHandleViewModelDelegate.kt.ftl"
-                   to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/loading/ShowMessageHandleViewModelDelegate.kt" />
+    <instantiate from="root/src/app_package/common/delegates/vvm/message/IShowMessageHandleViewModelDelegate.kt.ftl"
+                   to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/message/IShowMessageHandleViewModelDelegate.kt" />
+    <instantiate from="root/src/app_package/common/delegates/vvm/message/ShowMessageDelegate.kt.ftl"
+                   to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/message/ShowMessageDelegate.kt" />
+    <instantiate from="root/src/app_package/common/delegates/vvm/message/ShowMessageHandleViewModelDelegate.kt.ftl"
+                   to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/message/ShowMessageHandleViewModelDelegate.kt" />
 
     <instantiate from="root/src/app_package/common/delegates/vvm/navigation/commands/ActionCommand.kt.ftl"
                    to="${escapeXmlAttribute(srcDelegatesOut)}/vvm/navigation/commands/ActionCommand.kt" />
